@@ -1,7 +1,3 @@
-# DynamicsLab
-
-This project is for the DynamicsLab simulations. It is really great.
-
 This project has used the following libraries/api:
 Three.js (https://threejs.org/)
 EvaluateX (https://arthanzel.github.io/evaluatex/)
