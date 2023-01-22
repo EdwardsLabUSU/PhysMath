@@ -1,0 +1,9 @@
+TODO:
+- Make main site
+- hook up the simulations to the main site
+- universalify the makeTables.js for making ui
+
+
+
+Ideas:
+- figure out how to universalify the rk4 and the d3 graphs
