@@ -1,9 +1,0 @@
-TODO:
-- universalify the makeTables.js for making ui
-- implement react.js
-- make rk4 pregenerate parsed equations rather than compiling them every time
-
-
-
-Ideas:
-- figure out how to universalify 4 and the d3 graphs
