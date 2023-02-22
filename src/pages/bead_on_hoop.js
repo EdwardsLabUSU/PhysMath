@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState} from 'react';
 import MathInput from '../components/math_input';
 import VarTable from '../components/var_table';
 import JsonData from '../data/bead_var.json'
-import { draw } from '../simulation_code/bead/runSim';
-import Canvas from '../components/canvas';
+import BeadCanvas from '../components/threejs_bead';
+
     function Bead (){
         const [thetaEq, setThetaEq] = useState('');
         const [velocityEq, setVelocityEq] = useState('');
@@ -13,9 +13,8 @@ import Canvas from '../components/canvas';
             values.push(value.val)
         }
         const [vars, setVars] = useState(values);
-        
-        let [canvas1ref, setCanvas1ref]  = useState();
-        let [canvas2ref, setCanvas2ref]  = useState();
+        const [thetaData, setThetaData] = useState();
+        const [velocityData, setVelocityData] = useState();
         return(
             <div className='bead-on-hoop'>
             <div className="title-box">
@@ -25,9 +24,10 @@ import Canvas from '../components/canvas';
                 <div className='canvas-container'>
                     <p>Reference Equations:</p>
                     {/* <canvas ref ={canvas2ref} className = "canvas2" id="c2" width = "400" height="400"></canvas> */}
-                    <Canvas setter={setCanvas1ref} height={400} width={400}/>
+                    <BeadCanvas/>
+                    
                     <p>Test Equations:</p> 
-                    <Canvas setter={setCanvas2ref} height={400} width={400}/>
+                    
                     {/* <canvas ref ={canvas1ref} className = "canvas1" id="c" width = "400" height="400"></canvas> */}
                 </div>
                 <form className='variables'>
@@ -56,7 +56,7 @@ import Canvas from '../components/canvas';
             <button type="button" 
                 id = "generate" 
                 class="btn btn-outline-light btn-lg"
-                onClick={draw({thetadot:thetaEq, velocitydot:velocityEq}, true, "variableSim-theta","variableSim-velocity", vars, canvas1ref, canvas2ref)}
+                // onClick={draw({thetadot:thetaEq, velocitydot:velocityEq}, true, "variableSim-theta","variableSim-velocity", vars, canvas1ref, canvas2ref)}
                 onFocus="blur()"
                 ><i class="fas fa-sync-alt"></i> reset position (r)</button>
 
