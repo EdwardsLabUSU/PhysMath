@@ -24,11 +24,11 @@
     "display": "friction"
   },
   {
-    "val": "5.0",
+    "val": ".1",
     "id": "theta",
     "name": "θ",
     "type": "text",
-    "units": "degrees",
+    "units": "radians",
     "display": "theta"
   }, 
   {
@@ -56,7 +56,7 @@
     "display": "simulation speed"
   },
   {
-    "val": ".005",
+    "val": ".001",
     "id": "graphint",
     "name": "graphint",
     "type": "text",

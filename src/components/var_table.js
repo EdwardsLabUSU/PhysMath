@@ -9,7 +9,7 @@ export default function VarTable({data, setVals, arr}){
         (info, index)=>{
             return(
                 <tr>
-                    <td class = 'varCol'>{info.display} ({info.name})</td>
+                    <td className = 'varCol'>{info.display} ({info.name})</td>
                     <td><input defaultChecked={info.checked} type={info.type} id={info.id} name={info.id} defaultValue={info.val} onChange={
                         (e) => {
                             let newArr = arr;
@@ -20,7 +20,7 @@ export default function VarTable({data, setVals, arr}){
                                     } else{
                                         newArr[index] = e.target.value                     
                                     }
-                            //         console.log(newArr[i])
+                                     console.log(index)
                             //     }
                             // }
                             //newArr[index] = e.target.value
@@ -34,7 +34,7 @@ export default function VarTable({data, setVals, arr}){
     
     return(
         <div>
-            <table class="table table-striped">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                     <th>Values</th>

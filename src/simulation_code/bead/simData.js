@@ -6,6 +6,7 @@ export class simData {
     
     insert(time, theta, velocity){
         this.data.push(new dataPoint(time, theta, velocity));
+        // console.log(this.data[this.data.length-1] + "pushed")
     }
 
     getTheta(time){
@@ -26,8 +27,11 @@ export class simData {
             }
         return this.data[dataIndex].velocity;
     }
-// 
-    
+    // toString(){
+    //     this.data.forEach(element => {
+    //         console.log([element.time,this.theta,this.velocity])
+    //     });
+    // }
 }
 
 class dataPoint {
