@@ -2,9 +2,10 @@ import React, {useState, useEffect, useRef} from "react";
 import MathView from "react-math-view";
 import { parseTex, evaluateTex } from 'tex-math-parser'
 
-export default function MathInput({value, id, label, setEq}) {
-  const [latex, setLatex] = useState(value);
-  const [text, setText] = useState(value);
+
+export default function MathInput({value, id, label}) {
+  const [latex, setLatex] = useState(value.current);
+  const [text, setText] = useState(value.current);
   const [ans, setAns] = useState("");
   
   return (<><span><p>{label} =<MathView style={{display:"inline-block", verticalAlign:"middle"}}
@@ -14,9 +15,10 @@ export default function MathInput({value, id, label, setEq}) {
         (e)=>{
             setText(e.target.value);
             setLatex(e.target.value);
-            setEq(e.target.value);
+            value.current = e.target.value
         }}
   /> </p></span>
+  {/* <p>{latex}</p> */}
   {/* <p><span>{tryEval(ans,setAns,text)}</span></p> */}
 
   </>)

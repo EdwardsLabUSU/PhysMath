@@ -37,6 +37,7 @@ export function updateVals(dt, velocity, angle, omega, radius, g, k, equations, 
     //console.log(t + "<" + graphLen)
     while(t<graphLen){
         graphVals.insert(t,ynew[0],ynew[1]);
+        //console.log(graphVals.data.length)
         //console.log(graphVals.data.length + "" + t + "<" + graphLen)
         
         //console.log([t,y[0],y[1]]);
@@ -61,10 +62,11 @@ export function updateVals(dt, velocity, angle, omega, radius, g, k, equations, 
 }
   
   function derivsEval(t,y,dydt,omega,r,g,k, equations){
+    
     //console.log(y)
     try{
       // dydt[0]= evaluateTex(equations.thetadot, {k:k,r:r,g:g,o:omega,v:y[1],t:y[0]}).evaluated;
-      dydt[0]= evaluateTex('1', {k:k,r:r,g:g,o:omega,v:y[1],t:y[0]}).evaluated;
+      dydt[0]= evaluateTex(equations.thetadot, {k:k,r:r,g:g,o:omega,v:y[1],t:y[0]}).evaluated;
       } catch (err){
         //console.log(err);
         //document.getElementById("error-output").innerHTML="[BAD OR NO EQUATION INPUTED]";
@@ -72,7 +74,7 @@ export function updateVals(dt, velocity, angle, omega, radius, g, k, equations, 
     
     try{
       // dydt[1]= evaluateTex(equations.velocitydot, {k:k,r:r,g:g,o:omega,v:y[1],t:y[0]}).evaluated;
-      dydt[1]= evaluateTex('1', {k:k,r:r,g:g,o:omega,v:y[1],t:y[0]}).evaluated;
+      dydt[1]= evaluateTex(equations.velocitydot, {k:k,r:r,g:g,o:omega,v:y[1],t:y[0]}).evaluated;
     } catch(err){
       //document.getElementById("error-output").innerHTML="[BAD OR NO EQUATION INPUTED]";
     }

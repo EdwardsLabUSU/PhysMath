@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import React, { Component }  from 'react';
 import ReactDOM from 'react-dom'
 import './App.css';
+import './mathquill_styling/mathquill.css';
+//import './mathquill/mathquill-0.10.1/mathquill-basic.css'
 
 function App() {
   return (

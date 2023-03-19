@@ -25,6 +25,7 @@ export class simData {
         if (dataIndex > this.data.length-1) {
             dataIndex = this.data.length-1;
             }
+        //console.log(dataIndex)
         return this.data[dataIndex].velocity;
     }
     // toString(){
