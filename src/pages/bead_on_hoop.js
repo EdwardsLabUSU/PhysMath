@@ -25,7 +25,7 @@ import { wait } from '@testing-library/user-event/dist/utils';
         let values = new Array()
         for (const [key, value] of Object.entries(JsonData)) {
             //values.push(`${value.id}:${value.val}`)
-            if (value.name !== "wrap" && value.name !== "projection"){
+            if (value.name !== "wrap" && value.name !== "projection" && value.name !== "trail"){
                 values.push(Number(value.val))
             } else{
                 values.push(Boolean(value.val))
@@ -77,7 +77,7 @@ import { wait } from '@testing-library/user-event/dist/utils';
                 //console.log("LENGTHHH:" + refData.current.data.length)
             }
             }
-            if ( id === "reference" && time >= maxTime.current  && playRef.current == false){ 
+            if ( id === "reference" && time >= maxTime.current && playRef.current == false ){ 
                 //console.log("LENGTHHH:" + refData.current.data.length)//why does this run during or after reset?
                 //console.log("maxTime:" + maxTime.current)
                 //console.log("Time:" + time)
@@ -144,24 +144,34 @@ import { wait } from '@testing-library/user-event/dist/utils';
                 <div className='canvas-container'>
                     <p>Reference Equations:</p>
                     {/* <canvas ref ={canvas2ref} className = "canvas2" id="c2" width = "400" height="400"></canvas> */}
-                    <BeadCanvas id="reference" getData={refreshDataPoint} play={playRef} data={refData.current} omega={vars[5]} simSpeed={vars[6]} radius = {vars[0]} paused={paused} project={vars[9]}  trailLen ={vars[11]}/>
+                    <BeadCanvas id="reference" getData={refreshDataPoint} play={playRef} data={refData.current} omega={vars[5]} simSpeed={vars[6]} radius = {vars[0]} paused={paused} project={vars[9]}  trail ={true}/>
                     
                     <p>Test Equations:</p> 
-                    <BeadCanvas id="test" getData={refreshDataPoint} play={playTest} data={testData.current} omega={vars[5]} simSpeed={vars[6]} radius = {vars[0]}  paused={paused} project={vars[9]} trailLen ={vars[11]}/>
+                    <BeadCanvas id="test" getData={refreshDataPoint} play={playTest} data={testData.current} omega={vars[5]} simSpeed={vars[6]} radius = {vars[0]}  paused={paused} project={vars[9]} trail ={true}/>
                     {/* <canvas ref ={canvas1ref} className = "canvas1" id="c" width = "400" height="400"></canvas> */}
                 </div>
                 <form className='variables'>
                     <VarTable data={JsonData} setVals={storedVars} arr={storedVars} reDraw={reDraw}/>
-                    <div className = "time-stuff">
-                        <p className="time-label">Time(seconds):</p>
-                        <p className = "time-value" id="time">0</p>
-                    </div>   
                     <div className="equations-input">
                         {/* <MathInput label = "theta" value={thetaEq} id="thetadot"/>
                         <MathInput label = "velocity" value={velocityEq} id="velocitydot"/> */}
                         <MathQuillInput label = "theta" latex={thetaEq} reDraw={reDraw}/>
                         <MathQuillInput label = "velocity" latex={velocityEq} reDraw={reDraw}/>
                     </div>
+                    <span>
+                        <button type="button" 
+                            id = "generate" 
+                            className="btn btn-outline-light btn-sm"
+                            onClick={()=>{reDraw()}}
+                            // onFocus="blur()"
+                            ><i className="fas fa-sync-alt"></i> reset position (r)</button>
+                        
+                        <button type="button" 
+                            className="btn btn-outline-light btn-sm"
+                            onClick={()=>{paused.current = !paused.current}}
+                            // onFocus="blur()"
+                            ><i className="fas fa-play"></i> play/pause animation (spacebar)</button>
+                    </span>
                 </form>
                 <div className="graphs">
                     <div className="actual">
@@ -182,18 +192,7 @@ import { wait } from '@testing-library/user-event/dist/utils';
                     </div>
                 </div>
             </div>
-            <button type="button" 
-                id = "generate" 
-                className="btn btn-outline-light btn-lg"
-                onClick={()=>{reDraw()}}
-                // onFocus="blur()"
-                ><i className="fas fa-sync-alt"></i> reset position (r)</button>
-
-            <button type="button" 
-                className="btn btn-outline-light btn-lg"
-                onClick={()=>{paused.current = !paused.current}}
-                // onFocus="blur()"
-                ><i className="fas fa-play"></i> play/pause animation (spacebar)</button>
+            
         </div>
     );
     }

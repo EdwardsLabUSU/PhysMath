@@ -31,25 +31,31 @@ function getPos(angle, radius){
 return [x,y];
 }
 
-function Balls({rotation, time, RADIUS, paused, project, trailLen, getData, id, angle}){
+function Balls({rotation, time, RADIUS, paused, project, trail, getData, id, angle}){
+    const trailLen = 50
     const ref = useRef(null);
     let createBalls = []
     const ballRad = 8
     const [cords, setCords] = useState(Array(trailLen).fill([0,0,0]))
     const [hoopCords, setHoopCords] = useState(Array(trailLen).fill(0))
-    for (let i = 0; i < trailLen; i++){
-        createBalls.push(<Ball key={i} positionProp={[0,0,0]} radius={(i/trailLen)*ballRad} opacity={i/trailLen}/>)
+    if (trail){
+        for (let i = 0; i < trailLen; i++){
+            createBalls.push(<Ball key={i} positionProp={[0,0,0]} radius={(i/trailLen)*ballRad} opacity={i/trailLen}/>)
+        }}
+    else{
+        createBalls = [<Ball key={0} positionProp={[0,0,0]} radius={8} opacity={1}/>]
     }
     const [balls, setBalls] = useState(createBalls)
     useFrame((state, delta) => { //move this to a web worker?
         if (!paused.current){
             // console.log("useFrame time: " + time.current)
             const curAngle = angle.current
+            const ballCords = getPos(curAngle+3*Math.PI/2, RADIUS);
+            if (trail){
             //console.log(curAngle + id + time) 
             if (!project){
                 
                 let tempCords = cords
-                const ballCords = getPos(curAngle+3*Math.PI/2, RADIUS);
                 tempCords.push([ballCords[0]*Math.cos(rotation.current),ballCords[1],-ballCords[0]*Math.sin(rotation.current)])
                 tempCords.shift()
                 setCords(cords => [...tempCords])
@@ -69,17 +75,20 @@ function Balls({rotation, time, RADIUS, paused, project, trailLen, getData, id, 
                     newBalls[i] = (<Ball key={i} positionProp={[tempHoopCord[0]*Math.cos(rotation.current),  tempHoopCord[1],  -tempHoopCord[0]*Math.sin(rotation.current)]} radius={(i/balls.length)*ballRad} opacity={i/balls.length}/>)
                 }
             }
-            setBalls(balls =>[...newBalls])
-        
+            setBalls(balls =>[...newBalls])}
+            else{
+                // ball set here
+                setBalls(balls =>[...[<Ball key={0} positionProp={[ballCords[0]*Math.cos(rotation.current),ballCords[1],-ballCords[0]*Math.sin(rotation.current)]} radius={8} opacity={1}/>]])
+            }
         }})
     return (
         <mesh>
             {balls}
-        </mesh>
+        </mesh> 
     );
 }
 
-function BeadOnHoop({data, omega, simSpeed, paused, setTime, project, play, getData,id, trailLen, time}){
+function BeadOnHoop({data, omega, simSpeed, paused, setTime, project, play, getData,id, trail, time}){
     const RADIUS = 150
     const rotation = useRef(0)
     const offset = useRef(0)
@@ -108,24 +117,24 @@ function BeadOnHoop({data, omega, simSpeed, paused, setTime, project, play, getD
         })
     return (
         <mesh>
-                <Balls angle={angle}id={id} getData={getData} trailLen ={trailLen} project ={project} rotation={rotation}  omega={omega} simSpeed={simSpeed} data = {data} time = {time} RADIUS={RADIUS} paused={paused}/>
+                <Balls angle={angle}id={id} getData={getData} trail ={trail} project ={project} rotation={rotation}  omega={omega} simSpeed={simSpeed} data = {data} time = {time} RADIUS={RADIUS} paused={paused}/>
                 <Hoop hoop={hoop} RADIUS={RADIUS} paused={paused}/> 
         </mesh>
     );
 }
 
 
-export default function BeadCanvas({data, omega, simSpeed, paused, project, play, getData,id, trailLen}){
+export default function BeadCanvas({data, omega, simSpeed, paused, project, play, getData,id, trail}){
     const time = useRef(0)
     const [timer,setTime] = useState(0)
     //try moving Hoop and Balls into its own component so that useFrame syncronized
     return ( 
-        <div style={{width: "400px", height: "400px"}}>
+        <div style={{width: "350px", height: "350px"}}>
             <p>Time: {timer.toFixed(4)}</p>
             <Canvas camera={{fov:"25", position: [0,0,1000], near:".1", far:"100000", type:"PerspectiveCamera"}}>
                 {/* <ambientLight intensity={.5} /> */}
                 <pointLight position={[25,0,10000]} intensity={1.5}/>
-                <BeadOnHoop time={time} setTime={setTime}trailLen ={trailLen} id={id} getData={getData} play={play} data={data} omega={omega} simSpeed={simSpeed} paused={paused} project={project}/>
+                <BeadOnHoop time={time} setTime={setTime}trail ={trail} id={id} getData={getData} play={play} data={data} omega={omega} simSpeed={simSpeed} paused={paused} project={project}/>
             </Canvas>
             
         </div>
