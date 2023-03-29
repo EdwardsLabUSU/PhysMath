@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState} from 'react';
-import MathInput from '../components/math_input';
+// import MathInput from '../components/math_input';
 import VarTable from '../components/var_table';
 import JsonData from '../data/bead_var.json'
 import BeadCanvas from '../components/threejs_bead';
@@ -8,8 +8,8 @@ import {getGraphData} from '../simulation_code/bead/rk4functions'
 import MathQuillInput from '../components/mathquill_input'
 import VelocityGraph from '../components/VelocityGraph';
 import ThetaGraph from '../components/ThetaGraph';
-import { waitFor } from '@testing-library/react';
-import { wait } from '@testing-library/user-event/dist/utils';
+// import { waitFor } from '@testing-library/react';
+// import { wait } from '@testing-library/user-event/dist/utils';
 
 
     function getData(vars,equations,useEval, data, time, len){

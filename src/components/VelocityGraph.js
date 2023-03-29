@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef} from 'react'
-import * as d3 from "https://esm.run/d3";
+import * as d3 from 'd3'
 import { invalidate } from '@react-three/fiber';
 export default function VelocityGraph({ ball, data, dimensions, graphLen, type, update}){
     const svgRef = React.createRef()
