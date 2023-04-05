@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/DynamicsLab/static/css/main.b23c8cc5.css",
+    "main.js": "/DynamicsLab/static/js/main.c149bf52.js",
+    "static/js/111.13259a78.chunk.js": "/DynamicsLab/static/js/111.13259a78.chunk.js",
+    "static/media/Symbola.svg": "/DynamicsLab/static/media/Symbola.191c327f0aef5505dabc.svg",
+    "static/media/Symbola.otf": "/DynamicsLab/static/media/Symbola.b0c85dd4bda9eef9f78a.otf",
+    "static/media/Symbola.eot": "/DynamicsLab/static/media/Symbola.482c0b923751f14bb9d3.eot",
+    "static/media/Symbola.ttf": "/DynamicsLab/static/media/Symbola.9ab231eefb8c56f6ef5d.ttf",
+    "static/media/Symbola.woff": "/DynamicsLab/static/media/Symbola.c2f28720e1e7cecfecd4.woff",
+    "static/media/Symbola.woff2": "/DynamicsLab/static/media/Symbola.52e7ce77729712a06423.woff2",
+    "static/media/logo.svg": "/DynamicsLab/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/DynamicsLab/index.html",
+    "main.b23c8cc5.css.map": "/DynamicsLab/static/css/main.b23c8cc5.css.map",
+    "main.c149bf52.js.map": "/DynamicsLab/static/js/main.c149bf52.js.map",
+    "111.13259a78.chunk.js.map": "/DynamicsLab/static/js/111.13259a78.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b23c8cc5.css",
+    "static/js/main.c149bf52.js"
+  ]
+}
