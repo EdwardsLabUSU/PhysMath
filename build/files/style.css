@@ -1,0 +1,50 @@
+.canvas-form{
+    display: flex;
+    justify-content: left;
+    
+}
+.canvas-container{
+    border: 1px solid black;
+    margin-top: -1px;
+    margin-left: -1px;
+    margin-bottom: -2px;
+}
+
+.variables{
+    border: 1px solid black;
+    margin-top: -1px;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+.time-label{
+    text-align: center;
+}
+.time-value{
+    text-align: center;
+}
+.labels{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.actual{
+    display: flex;
+    justify-content: left;
+
+}
+.inputed{
+    display: flex;
+    justify-content: left;
+
+}
+
+.graphs{
+    border: 1px solid black;
+    margin-top: -1px;
+    
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
