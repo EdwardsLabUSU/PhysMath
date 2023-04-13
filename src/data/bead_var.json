@@ -24,11 +24,11 @@
     "display": "friction"
   },
   {
-    "val": ".1",
+    "val": "5",
     "id": "theta",
-    "name": "θ",
+    "name": "t",
     "type": "text",
-    "units": "radians",
+    "units": "degrees",
     "display": "theta"
   }, 
   {
@@ -42,15 +42,15 @@
   {
     "val": "20",
     "id": "omega",
-    "name": "ω",
+    "name": "w",
     "type": "text",
     "units": "radians/s",
     "display": "omega"
   },
   {
-   "val": "0.3",
+   "val": "0.1",
     "id": "simSpeed",
-    "name": "simSpeed",
+    "name": "n/a",
     "type": "text",
     "units": "x",
     "display": "simulation speed"
@@ -58,7 +58,7 @@
   {
     "val": ".001",
     "id": "graphint",
-    "name": "graphint",
+    "name": "n/a",
     "type": "text",
     "units": "seconds",
     "display": "graph update interval"
@@ -66,7 +66,7 @@
   {
     "val": "5",
     "id": "graphlen",
-    "name": "graphLen",
+    "name": "n/a",
     "type": "text",
     "units": "seconds",
     "display": "graph record length"
@@ -74,7 +74,7 @@
   {
     "val": "true",
     "id": "projection",
-    "name": "projection",
+    "name": "n/a",
     "type": "checkbox",
     "units": "",
     "checked": "true",
@@ -83,11 +83,11 @@
   {
     "val": "true",
     "id": "wrap",
-    "name": "wrap",
+    "name": "n/a",
     "type": "checkbox",
     "units": "",
     "checked": "true",
-    "display": "graph theta beyond 0-6.28"
+    "display": "graph theta beyond 0-360"
   }
 
 ]

@@ -36,7 +36,7 @@ export function updateVals(dt, velocity, angle, omega, radius, g, k, equations, 
       // let graphVals = new simData(dt);
     //console.log(t + "<" + graphLen)
     while(t<graphLen){
-        graphVals.insert(t,ynew[0],ynew[1]);
+        graphVals.insert(t,ynew[0]* 180/Math.PI,ynew[1]);
         //console.log(graphVals.data.length)
         //console.log(graphVals.data.length + "" + t + "<" + graphLen)
         
@@ -50,7 +50,8 @@ export function updateVals(dt, velocity, angle, omega, radius, g, k, equations, 
             y[0] = 2*Math.PI - Math.abs(y[0])
           }
         }
-        
+        console.log(y[0])
+        // y[0] = y[0] * 180/Math.PI;
 
     //console.log(y[0]);
         t = t + h;

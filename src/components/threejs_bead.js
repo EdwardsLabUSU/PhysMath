@@ -26,8 +26,8 @@ function Ball ({positionProp, opacity, radius}){
     
 }
 function getPos(angle, radius){
-    let x = radius*Math.cos(angle);
-    let y = radius*Math.sin(angle);
+    let x = radius*Math.cos(angle*Math.PI/180);
+    let y = radius*Math.sin(angle*Math.PI/180);
 return [x,y];
 }
 
@@ -50,7 +50,7 @@ function Balls({rotation, time, RADIUS, paused, project, trail, getData, id, ang
         if (!paused.current){
             // console.log("useFrame time: " + time.current)
             const curAngle = angle.current
-            const ballCords = getPos(curAngle+3*Math.PI/2, RADIUS);
+            const ballCords = getPos(curAngle+(3*Math.PI/2)*180/Math.PI, RADIUS);
             if (trail){
             //console.log(curAngle + id + time) 
             if (!project){
@@ -71,7 +71,7 @@ function Balls({rotation, time, RADIUS, paused, project, trail, getData, id, ang
                 if (!project){
                     newBalls[i] = (<Ball key={i} positionProp={cords[i]} radius={(i/balls.length)*ballRad} opacity={i/balls.length}/>)
                 } else{
-                    const tempHoopCord = getPos(hoopCords[i]+3*Math.PI/2, RADIUS)
+                    const tempHoopCord = getPos(hoopCords[i]+(3*Math.PI/2)*180/Math.PI, RADIUS)
                     newBalls[i] = (<Ball key={i} positionProp={[tempHoopCord[0]*Math.cos(rotation.current),  tempHoopCord[1],  -tempHoopCord[0]*Math.sin(rotation.current)]} radius={(i/balls.length)*ballRad} opacity={i/balls.length}/>)
                 }
             }

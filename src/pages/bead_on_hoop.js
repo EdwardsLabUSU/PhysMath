@@ -13,7 +13,7 @@ import ThetaGraph from '../components/ThetaGraph';
 
 
     function getData(vars,equations,useEval, data, time, len){
-        const props = [vars[7],vars[4],vars[3],vars[5],vars[0],vars[1],vars[2],equations,useEval,len,data,time,vars[10]]
+        const props = [vars[7],vars[4],vars[3],vars[5] ,vars[0],vars[1],vars[2],equations,useEval,len,data,time,vars[10]]
         //console.log(...props)
         return getGraphData(...props)//graphInt, v, angle, r, g, k, equations, useEval, graphLen, graphData, 0(time, starts at 0) , wrap
     }   
@@ -25,7 +25,7 @@ import ThetaGraph from '../components/ThetaGraph';
         let values = new Array()
         for (const [key, value] of Object.entries(JsonData)) {
             //values.push(`${value.id}:${value.val}`)
-            if (value.name !== "wrap" && value.name !== "projection" && value.name !== "trail"){
+            if (value.id !== "wrap" && value.id !== "projection" && value.id !== "trail"){
                 values.push(Number(value.val))
             } else{
                 values.push(Boolean(value.val))
@@ -88,8 +88,8 @@ import ThetaGraph from '../components/ThetaGraph';
                 //console.log(time+":"+maxTime.current)
                 maxTime.current=(maxTime.current+vars[8])
                 //console.log(maxTime.current)
-                refData.current = getGraphData(vars[7], refData.current.getVelocity(time), refData.current.getTheta(time)*180/Math.PI, vars[5], vars[0], vars[1], vars[2], {}, false, maxTime.current, refData.current, time, vars[10])
-                testData.current = getGraphData(vars[7], testData.current.getVelocity(time), testData.current.getTheta(time)*180/Math.PI, vars[5], vars[0], vars[1], vars[2], {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, maxTime.current, testData.current, time, vars[10])
+                refData.current = getGraphData(vars[7], refData.current.getVelocity(time), refData.current.getTheta(time), vars[5] * Math.PI/180, vars[0], vars[1], vars[2], {}, false, maxTime.current, refData.current, time, vars[10])
+                testData.current = getGraphData(vars[7], testData.current.getVelocity(time), testData.current.getTheta(time), vars[5] * Math.PI/180, vars[0], vars[1], vars[2], {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, maxTime.current, testData.current, time, vars[10])
                 //console.log(refData.current)
                 setUpdate(update=>update+1)
                 
@@ -155,6 +155,7 @@ import ThetaGraph from '../components/ThetaGraph';
                     <div className="equations-input">
                         {/* <MathInput label = "theta" value={thetaEq} id="thetadot"/>
                         <MathInput label = "velocity" value={velocityEq} id="velocitydot"/> */}
+                        <p>Use the variables in the parenthesis as the variables in the equations ex: w</p>
                         <MathQuillInput label = "theta" latex={thetaEq} reDraw={reDraw}/>
                         <MathQuillInput label = "velocity" latex={velocityEq} reDraw={reDraw}/>
                     </div>
