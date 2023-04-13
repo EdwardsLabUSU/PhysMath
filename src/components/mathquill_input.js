@@ -36,7 +36,7 @@ export default function MathQuillInput ({latex, label, reDraw}) {
 
     return (
         <div>
-            <p>{label}: <span ref={myField} id="math-field"></span></p>
+            <p>{label} = <span ref={myField} id="math-field"></span></p>
             {/* <p>LaTeX of what you typed: <span ref = {myOutput} id="latex"></span></p> */}
         </div>
         );

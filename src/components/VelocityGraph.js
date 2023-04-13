@@ -63,13 +63,13 @@ export default function VelocityGraph({ ball, data, dimensions, graphLen, type, 
             .text("Velocity")
         
             svg.append("text")
-            .attr("transform", "translate(" + (width/2) + "," + (height + 30) + ")")
+            .attr("transform", "translate(" + (width/1.35) + "," + (height + 30) + ")")
             .style("text-anchor", "middle")
             .style("font-size", "17px")
             .text("Time (s)")
         
             svg.append("text")
-            .attr("x", (height/2))
+            .attr("x", (width/1.4))
             .attr("y", 13)
             .style("text-anchor", "middle")
             .style("font-size", "13px")

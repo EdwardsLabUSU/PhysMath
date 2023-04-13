@@ -20,8 +20,8 @@ import ThetaGraph from '../components/ThetaGraph';
     
     function Bead (){
         
-        const thetaEq = useRef('vro');
-        const velocityEq = useRef('tor');
+        const thetaEq = useRef('vrw');
+        const velocityEq = useRef('twr');
         let values = new Array()
         for (const [key, value] of Object.entries(JsonData)) {
             //values.push(`${value.id}:${value.val}`)
@@ -44,10 +44,15 @@ import ThetaGraph from '../components/ThetaGraph';
         const graphDimensions = {width:250,height:250,margin:{left:60,right:30,top:20,bottom:30}}
         const [update, setUpdate] = useState(0)
         const [reset, setReset] = useState(0)
+        
         const reDraw = function () {
             paused.current = true
-            setUpdate(update=>update+1)  //UNCOMMENT ONCE FIGURE OUT WHY OTHER SET UPDATE IS RUNNING AT BAD TIME
-            setVars(vars => [...storedVars.current])
+            setVars(vars => [...storedVars.current]);
+            //console.log(refData.current)
+            
+        }
+
+        useEffect(()=>{
             refBall.current = {time:0, velocity:0, theta:0}
             testBall.current = {time:0, velocity:0, theta:0}
             maxTime.current = vars[8]
@@ -58,13 +63,10 @@ import ThetaGraph from '../components/ThetaGraph';
             refData.current = testData.current = null
             refData.current = getData(vars, {}, false, new simData(vars[7]), 0, vars[8])
             testData.current = getData(vars, {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, new simData(vars[7]), 0, vars[8])
+            setUpdate(update=>update+1)  //UNCOMMENT ONCE FIGURE OUT WHY OTHER SET UPDATE IS RUNNING AT BAD TIME
             paused.current = false
-            //console.log(refData.current)
-            
-        }
-        // useEffect(()=>{
-        //     console.log('Updated :)')
-        // },[update])
+            console.log(refData.current.getVelocity(0));
+        },[vars])
         
         
         const refreshDataPoint = function (id, time) {
@@ -88,8 +90,8 @@ import ThetaGraph from '../components/ThetaGraph';
                 //console.log(time+":"+maxTime.current)
                 maxTime.current=(maxTime.current+vars[8])
                 //console.log(maxTime.current)
-                refData.current = getGraphData(vars[7], refData.current.getVelocity(time), refData.current.getTheta(time), vars[5] * Math.PI/180, vars[0], vars[1], vars[2], {}, false, maxTime.current, refData.current, time, vars[10])
-                testData.current = getGraphData(vars[7], testData.current.getVelocity(time), testData.current.getTheta(time), vars[5] * Math.PI/180, vars[0], vars[1], vars[2], {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, maxTime.current, testData.current, time, vars[10])
+                refData.current = getGraphData(vars[7], refData.current.getVelocity(time), refData.current.getTheta(time), vars[5], vars[0], vars[1], vars[2], {}, false, maxTime.current, refData.current, time, vars[10])
+                testData.current = getGraphData(vars[7], testData.current.getVelocity(time), testData.current.getTheta(time), vars[5], vars[0], vars[1], vars[2], {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, maxTime.current, testData.current, time, vars[10])
                 //console.log(refData.current)
                 setUpdate(update=>update+1)
                 
@@ -156,6 +158,7 @@ import ThetaGraph from '../components/ThetaGraph';
                         {/* <MathInput label = "theta" value={thetaEq} id="thetadot"/>
                         <MathInput label = "velocity" value={velocityEq} id="velocitydot"/> */}
                         <p>Use the variables in the parenthesis as the variables in the equations ex: w</p>
+                        <p>If you need help with the equation input <a href="https://www.youtube.com/watch?v=IgasxD9f4_s&ab_channel=Udacity">Here</a> is a useful guide!</p>
                         <MathQuillInput label = "theta" latex={thetaEq} reDraw={reDraw}/>
                         <MathQuillInput label = "velocity" latex={velocityEq} reDraw={reDraw}/>
                     </div>

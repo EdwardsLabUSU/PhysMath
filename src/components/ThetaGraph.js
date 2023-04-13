@@ -60,20 +60,20 @@ export default function ThetaGraph({ball, data, dimensions, graphLen, type, upda
       .attr("y", 30)
       .style("text-anchor", "middle")
       .style("font-size", "17px")
-      .text("θ")
+      .text("θ°")
   
       svg.append("text")
-      .attr("transform", "translate(" + (width/2) + "," + (height + 30) + ")")
+      .attr("transform", "translate(" + (width/1.35) + "," + (height + 30) + ")")
       .style("text-anchor", "middle")
       .style("font-size", "17px")
       .text("Time (s)")
   
-      svg.append("text")
-      .attr("x", (height/2))
+      svg.append("text") 
+      .attr("x", (width/1.5))
       .attr("y", 13)
       .style("text-anchor", "middle")
       .style("font-size", "13px")
-      .text(`θ over Time: ${type} eqn`)
+      .text(`θ° over Time: ${type} eqn`)
       
       if (!Number.isNaN(data.current.data[1].theta)){
         d3.interval( () => {

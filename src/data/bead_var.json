@@ -2,92 +2,103 @@
   {
     "val": ".1",
     "id": "radius",
-    "name": "r",
-    "type": "text",
+    "name": "(r)",
+    "type": "number",
     "units": "m",
-    "display": "radius"
+    "display": "radius",
+    "tooltip": "Hoop radius (m)"
   },
   {
     "val": "9.8",
     "id": "gravity",
-    "name": "g",
-    "type": "text",
+    "name": "(g)",
+    "type": "number",
     "units": "m/s&#178;",
-    "display": "gravity"
+    "display": "gravity",
+    "tooltip": "Gravitational acceleration (m/s^2)"
   },
   {
     "val": "5.0",
     "id": "friction",
-    "name": "k",
-    "type": "text",
+    "name": "(k)",
+    "type": "number",
     "units": "",
-    "display": "friction"
+    "display": "friction",
+    "tooltip": "Coefficient of kinetic friction between the bead and the hoop"
   },
   {
     "val": "5",
     "id": "theta",
-    "name": "t",
-    "type": "text",
+    "name": "(t)",
+    "type": "number",
     "units": "degrees",
-    "display": "theta"
+    "display": "theta",
+    "tooltip": "Initial angular displacement of the bead from the bottom (degrees)"
   }, 
   {
     "val": "0.6",
     "id": "velocity",
-    "name": "v",
-    "type": "text",
+    "name": "(v)",
+    "type": "number",
     "units": "m/s",
-    "display": "velocity"
+    "display": "velocity",
+    "tooltip": "Initial velocity of the bead along the hoop (m/s)"
   },
   {
-    "val": "20",
+    "val": "1000",
     "id": "omega",
-    "name": "w",
-    "type": "text",
-    "units": "radians/s",
-    "display": "omega"
+    "name": "(w)",
+    "type": "number",
+    "units": "degrees/s",
+    "display": "omega",
+    "tooltip": "Angular frequency of the hoop (degrees/s)"
   },
   {
    "val": "0.1",
     "id": "simSpeed",
-    "name": "n/a",
-    "type": "text",
+    "name": "",
+    "type": "number",
     "units": "x",
-    "display": "simulation speed"
+    "display": "simulation speed",
+    "tooltip": "factor of speed for the simulation"
   },
   {
     "val": ".001",
     "id": "graphint",
-    "name": "n/a",
-    "type": "text",
+    "name": "",
+    "type": "number",
     "units": "seconds",
-    "display": "graph update interval"
+    "display": "graph update interval",
+    "tooltip": "How often there is a new data point (s)"
   },
   {
     "val": "5",
     "id": "graphlen",
-    "name": "n/a",
-    "type": "text",
+    "name": "",
+    "type": "number",
     "units": "seconds",
-    "display": "graph record length"
+    "display": "graph record length",
+    "tooltip": "length of graph data before refresh(s)"
   },
   {
     "val": "true",
     "id": "projection",
-    "name": "n/a",
+    "name": "",
     "type": "checkbox",
     "units": "",
     "checked": "true",
-    "display": "Project trail on hoop?"
+    "display": "Project trail on hoop?",
+    "tooltip": "project trail on the hoop vs in 3d space"
   },
   {
     "val": "true",
     "id": "wrap",
-    "name": "n/a",
+    "name": "",
     "type": "checkbox",
     "units": "",
     "checked": "true",
-    "display": "graph theta beyond 0-360"
+    "display": "graph theta beyond 0-360",
+    "tooltip": "Limit theta between 0 and 360 degrees"
   }
 
 ]

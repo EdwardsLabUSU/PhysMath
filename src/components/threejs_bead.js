@@ -101,8 +101,8 @@ function BeadOnHoop({data, omega, simSpeed, paused, setTime, project, play, getD
             angle.current = getData(id,time.current)
             time.current = time.current+(delta*simSpeed) 
             setTime(timer=>time.current)
-            offset.current = delta*simSpeed*omega
-            rotation.current = rotation.current+delta*omega*(simSpeed)
+            offset.current = delta*simSpeed*omega/180*Math.PI
+            rotation.current = rotation.current+delta*omega*(simSpeed)/180*Math.PI
             hoop.current.rotation.y = rotation.current - offset.current*2
             
         }else{

@@ -9,8 +9,8 @@ export default function VarTable({data, setVals, arr, reDraw}){
         (info, index)=>{
             return(
                 <tr>
-                    <td className = 'varCol'>{info.display} ({info.name})</td>
-                    <td><input onBlur={reDraw}defaultChecked={info.checked} type={info.type} id={info.id} name={info.id} defaultValue={info.val} onChange={
+                    <td className = 'varCol' data-toggle="tooltip" data-placement="right" title={info.tooltip}>{info.display} {info.name}</td>
+                    <td><input onBlur={reDraw}defaultChecked={info.checked}  type={info.type} id={info.id} name={info.id} defaultValue={info.val} onChange={
                         (e) => {
                             let newArr = arr.current;
                             //for (let i = 0; i < arr.length; i++){
@@ -37,8 +37,8 @@ export default function VarTable({data, setVals, arr, reDraw}){
             <table className="table table-striped">
                 <thead>
                     <tr>
-                    <th>Values</th>
-                    <th>Input</th>
+                    <th>Parameters</th>
+                    <th>Value</th>
                     <th>Units</th>
                     </tr>
                 </thead>
