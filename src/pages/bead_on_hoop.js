@@ -32,7 +32,8 @@ import ThetaGraph from '../components/ThetaGraph';
             }
         }
         const [vars, setVars] = useState(values);
-        const storedVars = useRef(vars)
+        // const storedVars = useRef(vars)
+        const [storedVars, setStored] = useState(vars);
         const refData = useRef(getData(vars, {}, false, new simData(vars[7]), 0, vars[8]))
         const testData = useRef(getData(vars, {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, new simData(vars[7]), 0, vars[8]))//start time must equal last time? use time
         const paused = useRef(false)
@@ -47,7 +48,7 @@ import ThetaGraph from '../components/ThetaGraph';
         
         const reDraw = function () {
             paused.current = true
-            setVars(vars => [...storedVars.current]);
+            setVars(vars => [...storedVars]);
             //console.log(refData.current)
             
         }
@@ -153,7 +154,7 @@ import ThetaGraph from '../components/ThetaGraph';
                     {/* <canvas ref ={canvas1ref} className = "canvas1" id="c" width = "400" height="400"></canvas> */}
                 </div>
                 <form className='variables'>
-                    <VarTable data={JsonData} setVals={storedVars} arr={storedVars} reDraw={reDraw}/>
+                    <VarTable data={JsonData} setVals={setStored} arr={storedVars} reDraw={reDraw}/>
                     <div className="equations-input">
                         {/* <MathInput label = "theta" value={thetaEq} id="thetadot"/>
                         <MathInput label = "velocity" value={velocityEq} id="velocitydot"/> */}
