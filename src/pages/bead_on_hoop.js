@@ -13,33 +13,39 @@ import ThetaGraph from '../components/ThetaGraph';
 
 
     function getData(vars,equations,useEval, data, time, len){
-        const props = [vars[7],vars[4],vars[3],vars[5] ,vars[0],vars[1],vars[2],equations,useEval,len,data,time,vars[10]]
+        const props = [vars['graphint'],vars['velocity'],vars['theta'],vars['omega'] ,vars['radius'],vars['gravity'],vars['friction'],equations,useEval,len,data,time,vars['wrap']]
         //console.log(...props)
-        return getGraphData(...props)//graphInt, v, angle, r, g, k, equations, useEval, graphLen, graphData, 0(time, starts at 0) , wrap
+        return getGraphData(...props)//graphInt, v, angle, omega, r, g, k, equations, useEval, graphLen, graphData, 0(time, starts at 0) , wrap
     }   
     
     function Bead (){
-        
-        const thetaEq = useRef('vrw');
-        const velocityEq = useRef('twr');
+        const thetaEqInput = useRef('vr');
+        const velocityEqInput = useRef('vrg');
+        const thetaEq = useRef('vr');
+        const velocityEq = useRef('vrg');
         let values = new Array()
+        let dict = {}
         for (const [key, value] of Object.entries(JsonData)) {
             //values.push(`${value.id}:${value.val}`)
             if (value.id !== "wrap" && value.id !== "projection" && value.id !== "trail"){
                 values.push(Number(value.val))
+                dict[value.id] = Number(value.val)
             } else{
                 values.push(Boolean(value.val))
+                dict[value.id] = Boolean(value.val)
+
             }
         }
-        const [vars, setVars] = useState(values);
+        // console.log(dict)
+        const [vars, setVars] = useState(dict);
         // const storedVars = useRef(vars)
-        const [storedVars, setStored] = useState(vars);
-        const refData = useRef(getData(vars, {}, false, new simData(vars[7]), 0, vars[8]))
-        const testData = useRef(getData(vars, {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, new simData(vars[7]), 0, vars[8]))//start time must equal last time? use time
+        const [storedVars, setStored] = useState(dict);
+        const refData = useRef(getData(vars, {}, false, new simData(vars['graphint']), 0, vars['graphlen']))
+        const testData = useRef(getData(vars, {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, new simData(vars['graphint']), 0, vars['graphlen']))//start time must equal last time? use time
         const paused = useRef(false)
         const playRef = useRef(false)
         const playTest = useRef(false)
-        const maxTime = useRef(vars[8])
+        const maxTime = useRef(vars['graphlen'])
         const refBall = useRef({time:0, velocity:0, theta:0})
         const testBall = useRef({time:0, velocity:0, theta:0})
         const graphDimensions = {width:250,height:250,margin:{left:60,right:30,top:20,bottom:30}}
@@ -48,7 +54,7 @@ import ThetaGraph from '../components/ThetaGraph';
         
         const reDraw = function () {
             paused.current = true
-            setVars(vars => [...storedVars]);
+            setVars(vars => ({...storedVars}));
             //console.log(refData.current)
             
         }
@@ -56,14 +62,14 @@ import ThetaGraph from '../components/ThetaGraph';
         useEffect(()=>{
             refBall.current = {time:0, velocity:0, theta:0}
             testBall.current = {time:0, velocity:0, theta:0}
-            maxTime.current = vars[8]
+            maxTime.current = vars['graphlen']
             //console.log("maxtime:"+maxTime.current)
             //console.log("graphLen:"+vars[8])
             playRef.current = true
             playTest.current = true
             refData.current = testData.current = null
-            refData.current = getData(vars, {}, false, new simData(vars[7]), 0, vars[8])
-            testData.current = getData(vars, {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, new simData(vars[7]), 0, vars[8])
+            refData.current = getData(vars, {}, false, new simData(vars['graphint']), 0, vars['graphlen'])
+            testData.current = getData(vars, {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, new simData(vars['graphint']), 0, vars['graphlen'])
             setUpdate(update=>update+1)  //UNCOMMENT ONCE FIGURE OUT WHY OTHER SET UPDATE IS RUNNING AT BAD TIME
             paused.current = false
             console.log(refData.current.getVelocity(0));
@@ -72,10 +78,10 @@ import ThetaGraph from '../components/ThetaGraph';
         
         const refreshDataPoint = function (id, time) {
             
-            if(time<vars[8]){
-                if (maxTime.current > vars[8]){
+            if(time<vars['graphlen']){
+                if (maxTime.current > vars['graphlen']){
                 //console.log(time + ""+vars[8])
-                maxTime.current = vars[8]
+                maxTime.current = vars['graphlen']
                 setReset(reset=>reset + 1)
                 //console.log("LENGTHHH:" + refData.current.data.length)
             }
@@ -84,15 +90,15 @@ import ThetaGraph from '../components/ThetaGraph';
                 //console.log("LENGTHHH:" + refData.current.data.length)//why does this run during or after reset?
                 //console.log("maxTime:" + maxTime.current)
                 //console.log("Time:" + time)
-                if(time<vars[8]){
-                    console.log(time + ""+vars[8])
-                    maxTime.current = vars[8]
+                if(time<vars['graphlen']){
+                    console.log(time + ""+vars['graphlen'])
+                    maxTime.current = vars['graphlen']
                 } 
                 //console.log(time+":"+maxTime.current)
-                maxTime.current=(maxTime.current+vars[8])
+                maxTime.current=(maxTime.current+vars['graphlen'])
                 //console.log(maxTime.current)
-                refData.current = getGraphData(vars[7], refData.current.getVelocity(time), refData.current.getTheta(time), vars[5], vars[0], vars[1], vars[2], {}, false, maxTime.current, refData.current, time, vars[10])
-                testData.current = getGraphData(vars[7], testData.current.getVelocity(time), testData.current.getTheta(time), vars[5], vars[0], vars[1], vars[2], {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, maxTime.current, testData.current, time, vars[10])
+                refData.current = getGraphData(vars['graphint'], refData.current.getVelocity(time), refData.current.getTheta(time), vars['omega'], vars['radius'], vars['gravity'], vars['friction'], {}, false, maxTime.current, refData.current, time, vars['wrap'])
+                testData.current = getGraphData(vars['graphint'], testData.current.getVelocity(time), testData.current.getTheta(time), vars['omega'], vars['radius'], vars['gravity'], vars['friction'], {thetadot:thetaEq.current, velocitydot:velocityEq.current}, true, maxTime.current, testData.current, time, vars['wrap'])
                 //console.log(refData.current)
                 setUpdate(update=>update+1)
                 
@@ -147,10 +153,10 @@ import ThetaGraph from '../components/ThetaGraph';
                 <div className='canvas-container'>
                     <p>Reference Equations:</p>
                     {/* <canvas ref ={canvas2ref} className = "canvas2" id="c2" width = "400" height="400"></canvas> */}
-                    <BeadCanvas id="reference" getData={refreshDataPoint} play={playRef} data={refData.current} omega={vars[5]} simSpeed={vars[6]} radius = {vars[0]} paused={paused} project={vars[9]}  trail ={true}/>
+                    <BeadCanvas id="reference" getData={refreshDataPoint} play={playRef} data={refData.current} omega={vars['omega']} simSpeed={vars['simSpeed']} radius = {vars['radius']} paused={paused} project={vars['projection']}  trail ={true}/>
                     
                     <p>Test Equations:</p> 
-                    <BeadCanvas id="test" getData={refreshDataPoint} play={playTest} data={testData.current} omega={vars[5]} simSpeed={vars[6]} radius = {vars[0]}  paused={paused} project={vars[9]} trail ={true}/>
+                    <BeadCanvas id="test" getData={refreshDataPoint} play={playTest} data={testData.current} omega={vars['omega']} simSpeed={vars['simSpeed']} radius = {vars['radius']}  paused={paused} project={vars['projection']} trail ={true}/>
                     {/* <canvas ref ={canvas1ref} className = "canvas1" id="c" width = "400" height="400"></canvas> */}
                 </div>
                 <form className='variables'>
@@ -160,8 +166,8 @@ import ThetaGraph from '../components/ThetaGraph';
                         <MathInput label = "velocity" value={velocityEq} id="velocitydot"/> */}
                         <p>Use the variables in the parenthesis as the variables in the equations ex: w</p>
                         <p>If you need help with the equation input <a href="https://www.youtube.com/watch?v=IgasxD9f4_s&ab_channel=Udacity">Here</a> is a useful guide!</p>
-                        <MathQuillInput label = "theta" latex={thetaEq} reDraw={reDraw}/>
-                        <MathQuillInput label = "velocity" latex={velocityEq} reDraw={reDraw}/>
+                        <MathQuillInput label = "θ&#x307;" latex={thetaEqInput}  eq = {thetaEq} reDraw={reDraw} norm='vr'/>
+                        <MathQuillInput label = "v&#775;" latex={velocityEqInput} eq = {velocityEq} reDraw={reDraw} norm='vrg'/>
                     </div>
                     <span>
                         <button type="button" 

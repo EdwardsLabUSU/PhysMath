@@ -1,11 +1,13 @@
 import React, { useState, useEffect} from 'react'
 import MathQuill from "mathquill-node";
+import { useRef } from 'react';
 //import { addStyles, EditableMathField } from 'react-mathquill'
 
 // inserts the required css to the <head> block.
 // you can skip this, if you want to do that by 
-export default function MathQuillInput ({latex, label, reDraw}) {
+export default function MathQuillInput ({latex, label, reDraw, norm, eq}) {
     let myField = React.createRef()
+    // const myLatex = useRef(norm)
     //let myOutput = React.createRef()
     // const verify = () =>{
 
@@ -18,13 +20,15 @@ export default function MathQuillInput ({latex, label, reDraw}) {
         //latexSpan.textContent = latex.current
         mathFieldSpan.textContent = latex.current
         var MQ = MathQuill.getInterface(2); // for backcompat
+        
         var mathField = MQ.MathField(mathFieldSpan, {
         spaceBehavesLikeTab: true, // configurable
         handlers: {
             edit: function() { // useful event handlers
-            //latexSpan.textContent = mathField.latex(); // simple API
-            latex.current = mathField.latex();
-
+            latex.current = mathField.latex(); // simple API
+            eq.current = mathField.latex().replace('\\theta','t').replace('\\omega','w');
+            // latex.current = latex.current;
+            // console.log(latex.current)
             }
         }
     }

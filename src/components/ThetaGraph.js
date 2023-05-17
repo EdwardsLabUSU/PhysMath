@@ -77,6 +77,7 @@ export default function ThetaGraph({ball, data, dimensions, graphLen, type, upda
       
       if (!Number.isNaN(data.current.data[1].theta)){
         d3.interval( () => {
+          // console.log(graphLen)
           svg.selectAll("circle").remove();
           svg.selectAll("dot")
           .data([50,50])

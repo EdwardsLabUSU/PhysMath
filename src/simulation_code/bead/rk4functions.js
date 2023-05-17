@@ -1,5 +1,6 @@
 import { simData } from './simData.js';
 import { evaluateTex } from 'tex-math-parser';
+
 //import evaluatex from 'evaluatex';
 //const evaluatex = require("evaluatex");
 // export function updateVals(dt, velocity, angle, omega, radius, g, k, equations, useEval){
@@ -68,6 +69,7 @@ import { evaluateTex } from 'tex-math-parser';
     try{
       // dydt[0]= evaluateTex(equations.thetadot, {k:k,r:r,g:g,o:omega,v:y[1],t:y[0]}).evaluated;
       dydt[0]= evaluateTex(equations.thetadot, {k:k,r:r,g:g,w:omega,v:y[1],t:y[0]}).evaluated;
+      
       } catch (err){
         //console.log(err);
         //document.getElementById("error-output").innerHTML="[BAD OR NO EQUATION INPUTED]";

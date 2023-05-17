@@ -23,16 +23,16 @@ export default function VarTable({data, setVals, arr, reDraw}){
                                 //for (let i = 0; i < arr.length; i++){
                                 //     if (e.target.id === arr[i].split(":")[0]){
                                         if (e.target.value === 'true' || e.target.value === 'false'){
-                                            newArr[index] = e.target.checked
+                                            newArr[info.id] = e.target.checked
                                         } else{
-                                            newArr[index] = Number(e.target.value)                     
+                                            newArr[info.id] = Number(e.target.value)                     
                                         }
                                         console.log(index)
                                 //     }
                                 // }
                                 //newArr[index] = e.target.value
                                 // setVals.current=newArr
-                                setVals(arr => [...newArr])
+                                setVals(arr => ({...newArr}))
                                 // console.log(e)
           }
             return(
@@ -45,7 +45,7 @@ export default function VarTable({data, setVals, arr, reDraw}){
                       
                       <Grid item xs>
                         <Slider
-                        value = {arr[index]}
+                        value = {arr[info.id]}
                           onBlur={reDraw}
                           onChange={handleInputChange}
                           aria-labelledby="input-slider"
@@ -53,7 +53,7 @@ export default function VarTable({data, setVals, arr, reDraw}){
                       </Grid>
                       <Grid item>
                         <Input
-                          value={arr[index]}
+                          value={arr[info.id]}
                           size="small"
                           onBlur={reDraw}
                           onChange={handleInputChange}
@@ -69,21 +69,7 @@ export default function VarTable({data, setVals, arr, reDraw}){
                     </Grid>
                   </Box>
                             : <input min={info.min} max = {info.max} onBlur={reDraw}defaultChecked={info.checked}  type={info.type} id={info.id} name={info.id} defaultValue={info.val} onChange={
-                                (e) => {
-                                    let newArr = arr.current;
-                                    //for (let i = 0; i < arr.length; i++){
-                                    //     if (e.target.id === arr[i].split(":")[0]){
-                                            if (e.target.value === 'true' || e.target.value === 'false'){
-                                                newArr[index] = e.target.checked
-                                            } else{
-                                                newArr[index] = Number(e.target.value)                     
-                                            }
-                                            console.log(index)
-                                    //     }
-                                    // }
-                                    //newArr[index] = e.target.value
-                                    setVals.current=newArr
-                                }}/>}</td>
+                              handleInputChange}/>}</td>
                     <td dangerouslySetInnerHTML={{__html: `${info.units}`}}></td>
                 </tr>
             )
