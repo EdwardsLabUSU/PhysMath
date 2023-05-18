@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DynamicsLab/static/css/main.b23c8cc5.css",
-    "main.js": "/DynamicsLab/static/js/main.2e6a7f47.js",
+    "main.js": "/DynamicsLab/static/js/main.366184a3.js",
     "static/js/111.13259a78.chunk.js": "/DynamicsLab/static/js/111.13259a78.chunk.js",
     "static/media/Symbola.svg": "/DynamicsLab/static/media/Symbola.191c327f0aef5505dabc.svg",
     "static/media/Symbola.otf": "/DynamicsLab/static/media/Symbola.b0c85dd4bda9eef9f78a.otf",
@@ -12,11 +12,11 @@
     "static/media/logo.svg": "/DynamicsLab/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/DynamicsLab/index.html",
     "main.b23c8cc5.css.map": "/DynamicsLab/static/css/main.b23c8cc5.css.map",
-    "main.2e6a7f47.js.map": "/DynamicsLab/static/js/main.2e6a7f47.js.map",
+    "main.366184a3.js.map": "/DynamicsLab/static/js/main.366184a3.js.map",
     "111.13259a78.chunk.js.map": "/DynamicsLab/static/js/111.13259a78.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b23c8cc5.css",
-    "static/js/main.2e6a7f47.js"
+    "static/js/main.366184a3.js"
   ]
 }

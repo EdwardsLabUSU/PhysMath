@@ -33,6 +33,28 @@
     "max":"100"
   },
   {
+    "val": "1000",
+    "id": "omega",
+    "name": "(w)",
+    "type": "range",
+    "units": "degrees/s",
+    "display": "omega",
+    "tooltip": "Angular frequency of the hoop (degrees/s)",
+    "min":"0",
+    "max":"5000"
+  },
+  {
+    "val": "18",
+    "id": "omegaRads",
+    "name": "(w)",
+    "type": "range",
+    "units": "radians/s",
+    "display": "omega",
+    "tooltip": "Angular frequency of the hoop (radians/s)",
+    "min":"0",
+    "max":"90"
+  },
+  {
     "val": "5",
     "id": "theta",
     "name": "(t)",
@@ -53,17 +75,6 @@
     "tooltip": "Initial velocity of the bead along the hoop (m/s)",
     "min":"0",
     "max":"10"
-  },
-  {
-    "val": "1000",
-    "id": "omega",
-    "name": "(w)",
-    "type": "range",
-    "units": "degrees/s",
-    "display": "omega",
-    "tooltip": "Angular frequency of the hoop (degrees/s)",
-    "min":"0",
-    "max":"5000"
   },
   {
    "val": "0.1",

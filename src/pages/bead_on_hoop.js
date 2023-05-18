@@ -123,8 +123,14 @@ import ThetaGraph from '../components/ThetaGraph';
             } else if (e.key === 'r'){
                 if( e.target.nodeName == "INPUT" || e.target.nodeName == "TEXTAREA" ) return;
                 e.preventDefault();
-                reDraw()
+                reDraw();
 
+            } else if (e.ctrlKey && e.key === 'q'){ //press control-q and then r to put in default equations
+                console.log('control q pressed');
+                thetaEq.current = '\\frac{v}{r}';
+                velocityEq.current = 'r\\sin\\left(t\\right)\\left(w^2\\cos\\left(t\\right)-\\frac{g}{r}\\right)-k\\cdot v';
+                thetaEqInput.current = '\\frac{v}{r}';
+                velocityEqInput.current = 'r\\sin\\left(\\theta\\right)\\left(\\omega^2\\cos\\left(\\theta\\right)-\\frac{g}{r}\\right)-k\\cdot v';
             }
         }
         // const [count, setCount] = useState(0)
@@ -190,7 +196,7 @@ import ThetaGraph from '../components/ThetaGraph';
                             <ThetaGraph data={refData} graphLen={maxTime} type="reference" ball={refBall} dimensions={graphDimensions} update={update} />
                         </div>
                         <div id="staticSim-velocity">
-                            <VelocityGraph data={refData} graphLen={maxTime} type="reference" ball={refBall} dimensions={graphDimensions} update={update}/>
+                            <VelocityGraph data={refData} graphLen={maxTime} type="reference" ball={refBall} dimensions={graphDimensions} update={update} />
                         </div>
                     </div>
                     <div className = "inputed">
@@ -207,7 +213,10 @@ import ThetaGraph from '../components/ThetaGraph';
         </div>
     );
     }
-    
+// TODO 
+// 1. Button to insert omega and theta, tooltip instructs how to type it in the mathquil input
+// 2. Keyboard shortcut to insert the correct equations
+// 3. Introduce other omega that uses omega, both omegas will effect each other
 
 
 export default Bead; //look into https://cortexjs.io/compute-engine/ and the mathView/mathlive,
