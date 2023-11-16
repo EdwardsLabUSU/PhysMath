@@ -193,7 +193,7 @@ export function draw(equations, useEval, thetaDivId, velocityDivId, ) {
           let tempCord = getBallPos(ballsCords[i]+3*Math.PI/2, 100);
           balls[i].position.set(tempCord[0]*Math.cos(hoop.rotation.y),  tempCord[1],  -tempCord[0]*Math.sin(hoop.rotation.y))
         } else {
-      balls[i].position.set(prevCords[i][0],prevCords[i][1],prevCords[i][2])
+          balls[i].position.set(prevCords[i][0],prevCords[i][1],prevCords[i][2])
       }
     }
     }
