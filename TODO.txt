@@ -2,6 +2,7 @@ TODO:
 - universalify the makeTables.js for making ui
 - implement react.js
 - make rk4 pregenerate parsed equations rather than compiling them every time
+- figure out how we're gonna do react, and hosting on github pages
 
 
 

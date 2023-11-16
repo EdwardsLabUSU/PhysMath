@@ -13,47 +13,47 @@
 <body>
     <h1>Bead on Hoop</h1>
     <div class = "canvas-form">
-            <div class = "canvas-container">
-                <p>Reference Equations:</p>
-        <canvas class = "canvas2" id="c2" width = "400" height="400"></canvas>
-               <p>Test Equations:</p> 
-        <canvas class = "canvas1" id="c" width = "400" height="400"></canvas>
+        <div class = "canvas-container">
+            <p>Reference Equations:</p>
+            <canvas class = "canvas2" id="c2" width = "400" height="400"></canvas>
+            <p>Test Equations:</p> 
+            <canvas class = "canvas1" id="c" width = "400" height="400"></canvas>
+            
+        </div>
+            
+        <form class = "variables">
+            <p>Variables:</p>
+            <div id ="vars"></div>
+            <div class = "time-stuff">
+            <p class="time-label">Time(seconds):</p>
+            <p class = "time-value" id="time">0</p>
+            </div>
+            <div class="equations-input">
+            <p id = "equations-label">Leave Empty for default equations, (use o for ω, use t for θ):</p>
+            <p id = "thetadot" >θ&#x307 = <span id="math-field"></span></p>
+            <p id ="velocitydot">v&#x307 = <span id="math-field2"></span></p>
+            <p id = "error-output">[BAD OR NO EQUATION INPUTED]</p>
+            </div>
+        </form>
+            
+            <div class="graphs">
+                <div class="actual">
+                    <div id="staticSim-theta"></div>
+                    <div id="staticSim-velocity"></div>
+                        </div>
+                <div class = "inputed">
+            <div id="variableSim-theta"></div>
+            <div id="variableSim-velocity"></div>
+                </div>
                 
-            </div>
-            
-    <form class = "variables">
-        <p>Variables:</p>
-        <div id ="vars"></div>
-        <div class = "time-stuff">
-        <p class="time-label">Time(seconds):</p>
-        <p class = "time-value" id="time">0</p>
         </div>
-        <div class="equations-input">
-        <p id = "equations-label">Leave Empty for default equations, (use o for ω, use t for θ):</p>
-        <p id = "thetadot" >θ&#x307 = <span id="math-field"></span></p>
-        <p id ="velocitydot">v&#x307 = <span id="math-field2"></span></p>
-        <p id = "error-output">[BAD OR NO EQUATION INPUTED]</p>
-        </div>
-    </form>
-        
-        <div class="graphs">
-            <div class="actual">
-                <div id="staticSim-theta"></div>
-                <div id="staticSim-velocity"></div>
-                    </div>
-            <div class = "inputed">
-        <div id="variableSim-theta"></div>
-        <div id="variableSim-velocity"></div>
-            </div>
-            
-    </div>
     </div>
 
     <link href = "../common/libraries/mathquill-0.10.1/mathquill-basic.css" rel = "stylesheet">
     <script src="../common/libraries/jquery/dist/jquery.min.js"></script>
     <script src="../common/libraries/mathquill-0.10.1/mathquill.js"></script>
     <script src="../common/src/bundle2.js"></script>
-    <script src="./src/makeTable.js"></script>
+
     <button type="button" 
     id = "generate" 
     class="btn btn-outline-light btn-lg"
@@ -78,7 +78,22 @@
     
     
     <script type = "module">
-       
+        const vars = {r:{val: ".1", id: "radius", name: "r", type: "text", units:"m", display:"radius"},
+            g:{val: "9.8", id: "gravity", name: "g", type: "text", units:"m/s&#178;", display:"gravity"},
+            k:{val: "5.0", id: "friction", name: "k", type: "text", units:"", display:"friction"},
+            theta:{val: "5.0", id: "theta", name: "θ", type: "text", units:"degrees", display:"theta"},
+                v:{val: "0.6", id: "velocity", name: "v", type: "text", units:"m/s", display:"velocity"},
+                omega:{val: "20", id: "omega", name: "ω", type: "text", units:"radians/s", display:"omega"},
+                simSpeed:{val: "0.3", id: "simSpeed", name: "simSpeed", type: "text", units:"x", display:"simulation speed"},
+                graphUpdateInterval:{val: ".005", id: "graphint", name: "graphint", type: "text", units:"seconds", display:"graph update interval"},
+                graphLen:{val: "5", id: "graphlen", name: "graphLen", type: "text", units:"seconds", display:"graph record length"},
+                project:{val: "true", id: "projection", name: "projection", type: "checkbox", units:"", display:"Project trail on hoop?"},
+                graphWrap:{val: "true", id: "wrap", name: "wrap", type: "checkbox", units:"", display:"graph theta beyond 0-6.28"},
+                trailLen:{val: "100", id: "trailLen", name: "trailLen", type: "text", units:"", display: "trail length"}
+                };
+                import {makeTable} from "../common/src/makeTable.js";
+                makeTable(vars);
+
        let mathFieldSpan = document.getElementById('math-field');
         let latexSpan = "";
         let mathFieldSpan2 = document.getElementById('math-field2');

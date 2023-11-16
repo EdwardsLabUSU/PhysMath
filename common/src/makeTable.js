@@ -29,15 +29,17 @@
 // // velocityActual:{loc:"staticSim-velocity"}}
 
 
-function makeTable(vars){
-  t = document.getElementById("vars");
-  html = "<table>";
+export function makeTable(vars){
+  const t = document.getElementById("vars");
+  let html = "<table>";
   for (const [key, value] of Object.entries(vars)) {
-    html += `<tr><td class = 'varCol'>${value.id} (${value.name}): </td><td><input type=${value.type} id=${value.id} name=${value.name} value=${value.val} onBlur ="refresh()"></td>`;
+    html += `<tr><td class = 'varCol'>${value.display} (${value.name}): </td><td><input type=${value.type} id=${value.id} name=${value.id} value=${value.val} onBlur ="window.refresh()"></td><td>${value.units}</td>`;
   }
   html += "</table>";
   t.innerHTML = html;
-  document.getElementById("projection").checked = true;
-  document.getElementById("wrap").checked = true;
+  if (vars["projection"]){
+    document.getElementById("projection").checked = true;
+    document.getElementById("wrap").checked = true;
+  }
   window.play = true;
-}
+}// implement d3 here
