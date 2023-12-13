@@ -1,5 +1,5 @@
 {
-  "comment": "# bead-on-hoop 1.0.0-dev.0 Sat Nov 11 2023 18:48:01 GMT-0700 (Mountain Standard Time)",
+  "comment": "# bead-on-hoop 1.0.0-dev.0 Wed Dec 13 2023 10:08:58 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "2b2495994e1a001ed46ba1e2147f70aacb5732d2",
     "branch": "master"
@@ -9,7 +9,7 @@
     "branch": "master"
   },
   "bead-on-hoop": {
-    "sha": "f28e593c812a05cdf8b5f37f071844eec213b32d",
+    "sha": "e570e523d160a98bd53693dfc80cca3c494bb55e",
     "branch": "main"
   },
   "brand": {
