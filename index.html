@@ -7,15 +7,49 @@
     <link rel="stylesheet" href="style.css">
     <title>Dynamics Lab Home</title>
 </head>
-<body>
+<body style="height: 100vh; background-color: azure; display: flex; flex-direction: column; align-items: center; width: 100vw;">
     <div class="title-box">
-        <p id="lab-title">DynamicsLab</p>
+        <div class="dynamicsLab-text">
+            <p id="lab-title">Dynamics</p>
+            <p class="lab-color">Lab</p>
+        </div>
+        <div class="physics-details">
+            <p>INTERACTIVE PHYSICS SIMULATIONS</p>
+        </div>
+        <!-- <div  class="vertical-border"></div> -->
+        <!-- <p class="uni-text">Utah State University</p> -->
     </div>
-    <div class="bead-on-hoop">
-        <a href="./bead_on_hoop/bead-on-hoop_en_adapted-from-phet.html">Bead on Hoop simulation</a>
+    
+    <div class="physicsContainer">
+        <h4>Physics simulations:</h4>
     </div>
-    <div class="projectile-motion">
-        <a href="./projectile_motion_drag/projectile-motion-drag_en_adapted-from-phet.html">Projectile Motion and Drag (WIP)</a>
+    <div class="sim-cards-container">
+        <a class="cardsContainer" href="./bead_on_hoop/bead-on-hoop_en_adapted-from-phet.html">
+            <div class="imageContainer">
+                <img src="thumbnails/beadOnHooop.png" class="image"/>
+            </div>
+            <p style="text-decoration: none;">Bead on Hoop</p>
+            <!-- <a href="./bead_on_hoop/bead-on-hoop_en_adapted-from-phet.html">Bead on Hoop</a> -->
+        </a>
+        <a class="cardsContainer" href="./projectile_motion_drag/projectile-motion-drag_en_adapted-from-phet.html">
+            <div class="imageContainer">
+                <img src="thumbnails/projectile.png" class="image"/>
+            </div>
+            <p>Projectile Motion with Drag</p>
+            <!-- <a href="./bead_on_hoop/bead-on-hoop_en_adapted-from-phet.html">Bead on Hoop</a> -->
+        </a>
+        <div class="cardsContainer">
+            <!-- <a href="./projectile_motion_drag/projectile-motion-drag_en_adapted-from-phet.html">Projectile Motion and Drag (WIP)</a> -->
+            <p >New Sim coming soon</p>
+        </div>
     </div>
+     
+    <!-- <div class="infoContainer">asdf</div> -->
+    <script>
+        
+
+    </script>
 </body>
+
+
 </html>
