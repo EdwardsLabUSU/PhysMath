@@ -471,6 +471,39 @@ window.phet.chipper.thirdPartyLicenseEntries={
         "terms above."
       ]
     },
+    "p2-0.7.1.js": {
+      "text": [
+        "Copyright (c) 2016 p2.js authors"
+      ],
+      "license": "The MIT License",
+      "projectURL": "https://github.com/schteppe/p2.js",
+      "notes": "2D physics engine for simulations (e.g. Density/Buoyancy)",
+      "licenseText": [
+        "/**",
+        " * The MIT License (MIT)",
+        " *",
+        " * Copyright (c) 2016 p2.js authors",
+        " *",
+        " * Permission is hereby granted, free of charge, to any person obtaining a copy",
+        " * of this software and associated documentation files (the \"Software\"), to deal",
+        " * in the Software without restriction, including without limitation the rights",
+        " * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+        " * copies of the Software, and to permit persons to whom the Software is",
+        " * furnished to do so, subject to the following conditions:",
+        " *",
+        " * The above copyright notice and this permission notice shall be included in",
+        " * all copies or substantial portions of the Software.",
+        " *",
+        " * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+        " * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+        " * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+        " * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+        " * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+        " * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN",
+        " * THE SOFTWARE.",
+        " */"
+      ]
+    },
     "paper-js-0.12.17.js": {
       "text": [
         "Copyright (c) 2011 - 2020, Jürg Lehni & Jonathan Puckey, http://juerglehni.com/ & https://puckey.studio/"
@@ -566,6 +599,37 @@ window.phet.chipper.thirdPartyLicenseEntries={
         "WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING",
         "FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR",
         "OTHER DEALINGS IN THE SOFTWARE."
+      ]
+    },
+    "poly-decomp-0.3.0.js": {
+      "text": [
+        "Copyright (c) 2013 Stefan Hedman"
+      ],
+      "license": "The MIT License",
+      "projectURL": "https://github.com/schteppe/poly-decomp.js/",
+      "notes": "Polygon decomposition, required by Matter.js for a few operations",
+      "licenseText": [
+        "The MIT License (MIT)",
+        "",
+        "Copyright (c) 2013 Stefan Hedman",
+        "",
+        "Permission is hereby granted, free of charge, to any person obtaining a copy of",
+        "this software and associated documentation files (the \"Software\"), to deal in",
+        "the Software without restriction, including without limitation the rights to",
+        "use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of",
+        "the Software, and to permit persons to whom the Software is furnished to do so,",
+        "subject to the following conditions:",
+        "",
+        "The above copyright notice and this permission notice shall be included in all",
+        "copies or substantial portions of the Software.",
+        "",
+        "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+        "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS",
+        "FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR",
+        "COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER",
+        "IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN",
+        "CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+        ""
       ]
     },
     "seedrandom-2.4.2.js": {
@@ -802,6 +866,38 @@ window.phet.chipper.thirdPartyLicenseEntries={
         "   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
         "   See the License for the specific language governing permissions and",
         "   limitations under the License.",
+        ""
+      ]
+    },
+    "three-r104.js": {
+      "text": [
+        "Copyright © 2010-2019 three.js authors"
+      ],
+      "license": "The MIT License",
+      "projectURL": "http://threejs.org",
+      "notes": "For the 3D view (WebGL and Canvas), modified with commenting out startup console.log",
+      "licenseText": [
+        "The MIT License",
+        "",
+        "Copyright © 2010-2019 three.js authors",
+        "",
+        "Permission is hereby granted, free of charge, to any person obtaining a copy",
+        "of this software and associated documentation files (the \"Software\"), to deal",
+        "in the Software without restriction, including without limitation the rights",
+        "to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+        "copies of the Software, and to permit persons to whom the Software is",
+        "furnished to do so, subject to the following conditions:",
+        "",
+        "The above copyright notice and this permission notice shall be included in",
+        "all copies or substantial portions of the Software.",
+        "",
+        "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+        "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+        "FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+        "AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+        "LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+        "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN",
+        "THE SOFTWARE.",
         ""
       ]
     }
