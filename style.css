@@ -8,7 +8,9 @@
     height: 8rem;
     width: 100%;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); 
-    position: relative
+    /* position: sticky */
+    position: fixed;
+    
     
 }
 
@@ -42,7 +44,7 @@
     font-style: italic;
 }
 .physicsContainer{
-    margin-top: 5rem;
+    margin-top: 10rem;
     width: 99%;
 }
 
@@ -80,6 +82,10 @@
     overflow: scroll;
     display: flex;
     gap: 1rem;
+    /* background-color: cadetblue; */
+    align-items: center;
+    /* height: 40%; */
+    min-height: 17rem;
 }
 
 .imageContainer{
@@ -95,8 +101,59 @@
 .infoContainer{
     bottom: 0;
     position: absolute;
-    width: 100%;
+    border-top: 1px solid black;
+    min-width: 20rem;
+    width: 70%;
     height: 4rem;
     /* background-color: blue; */
     /* position: fixed */
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
 }
+
+.contactContainer{
+    width: 25%;
+    color: black;
+}
+
+.contactText{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .infoContainer {
+        width: 30rem;
+        flex-direction: column;
+        gap: 1rem;
+        min-height: 20rem;
+    }
+    .infoContainer div{
+        width: 100%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 800px){
+    .infoContainer {
+        width: 40rem;
+        flex-direction: column;
+        gap: 1rem;
+        min-height: 20rem;
+    }
+    .infoContainer div{
+        width: 100%;
+    }
+}
+/* @media (min-width: 401px) and (max-width: 800px){
+    .infoContainer {
+        width: 40rem;
+        flex-direction: column;
+        gap: 1rem;
+        min-height: 20rem;
+    }
+    .infoContainer div{
+        width: 100%;
+    }
+} */
