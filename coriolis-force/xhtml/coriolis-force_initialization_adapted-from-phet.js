@@ -1,10 +1,10 @@
 window.phet.chipper.project = 'coriolis-force';
 window.phet.chipper.version = '1.0.0-dev.0';
-window.phet.chipper.buildTimestamp = '2024-06-11 23:27:16 UTC';
+window.phet.chipper.buildTimestamp = '2024-06-12 00:11:59 UTC';
 window.phet.chipper.brand = 'adapted-from-phet';
 window.phet.chipper.locale = 'en';
 window.phet.chipper.dependencies = {
-  "comment": "# coriolis-force 1.0.0-dev.0 Tue Jun 11 2024 19:27:20 GMT-0400 (Eastern Daylight Time)",
+  "comment": "# coriolis-force 1.0.0-dev.0 Tue Jun 11 2024 20:12:03 GMT-0400 (Eastern Daylight Time)",
   "assert": {
     "sha": "347e7eeac1424adb6023fb06a619d6ea01a0620f",
     "branch": "main"
