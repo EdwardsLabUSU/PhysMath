@@ -5,34 +5,27 @@
     justify-content: left;
     align-items: center;
     flex-direction: column;
-    height: 8rem;
+    min-height: 1vh;
+    max-height: 10rem;
     width: 100%;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); 
-    /* position: sticky */
-    position: fixed;
-    font-size: 1vw;
-    
-    
+    /* font-size: 1vw; */
+
 }
 
 .dynamicsLab-text{
     display: flex;
-    font-size: 1vw;
 }
 
-.physics-details{
-    font-size: 1.2rem;
+.physics-details p{
     font-style: italic;
 }
 
 #lab-title{
-    font-size: 35px;
-
     font-style: italic;
 }
 
 .lab-color{
-    font-size: 35px;
     font-style: italic;
     color: darkturquoise;
 }
@@ -49,12 +42,8 @@
 .physicsContainer{
     margin-top: 10rem;
     width: 99%;
+    
 }
-
-.aboutUsText{
-    font-size: 40vw;
-}
-
 
 .cardsContainer{
     min-width: 25rem;
@@ -96,6 +85,20 @@
     min-height: 17rem;
 }
 
+
+.nsf-container{
+    margin-top: 5%;
+    width: 98%;
+    height: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 10rem; */
+}
+
+
+
 .imageContainer{
     border-radius: 1rem;
 }
@@ -109,7 +112,9 @@
 .infoContainer{
     bottom: 0;
     position: absolute;
+    /* height: ; */
     border-top: 1px solid black;
+    margin-top: 10rem;
     min-width: 20rem;
     width: 70%;
     height: 4rem;
@@ -131,8 +136,41 @@
     font-weight: bold;
 }
 
-.cardsHolderContainer{
-    width: 98%; min-height: 40rem; padding-bottom: 4rem;
+
+.aboutContainer{
+    font-size: 2rem !important;
+}
+
+
+@media (min-width: 1000px) and (max-width: 2000px){
+    .title-box{
+        font-size: 1.2vw !important;
+        width: 100vw !important;
+        min-height: 10vh;
+    }
+    .physicsContainer{
+        font-size: 1.2vw;
+        margin-top: 10rem;
+        /* width: 99%; */
+    }
+    .aboutContainer p{
+        font-size: 1.2vw;
+    }
+}
+
+@media (min-width: 2001){
+    .title-box{
+        font-size: 1.2vw !important;
+        width: 100vw !important;
+    }
+    .physicsContainer{
+        font-size: 1.2vw;
+        margin-top: 10rem;
+        /* width: 99%; */
+    }
+    .aboutContainer p{
+        font-size: 1.2vw;
+    }
 }
 
 @media (max-width: 400px) {
@@ -142,11 +180,17 @@
         gap: 1rem;
         min-height: 20rem;
     }
-    .cardsHolderContainer{
+    .aboutContainer{
         padding-bottom: 25rem;
     }
     .infoContainer div{
         width: 100%;
+    }
+    .physicsContainer p{
+        font-size: 1rem !important;
+    }
+    .aboutContainer p{
+        font-size: 1.1rem;
     }
 }
 
@@ -159,5 +203,8 @@
     }
     .infoContainer div{
         width: 100%;
+    }
+    .aboutContainer p{
+        font-size: 1.1rem;
     }
 }
