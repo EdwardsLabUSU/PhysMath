@@ -1,10 +1,10 @@
 window.phet.chipper.project = 'projectile-motion-drag';
 window.phet.chipper.version = '1.0.0-dev.0';
-window.phet.chipper.buildTimestamp = '2024-06-06 14:28:12 UTC';
+window.phet.chipper.buildTimestamp = '2024-06-19 00:08:44 UTC';
 window.phet.chipper.brand = 'adapted-from-phet';
 window.phet.chipper.locale = 'en';
 window.phet.chipper.dependencies = {
-  "comment": "# projectile-motion-drag 1.0.0-dev.0 Thu Jun 06 2024 10:28:16 GMT-0400 (Eastern Daylight Time)",
+  "comment": "# projectile-motion-drag 1.0.0-dev.0 Tue Jun 18 2024 20:08:51 GMT-0400 (Eastern Daylight Time)",
   "assert": {
     "sha": "347e7eeac1424adb6023fb06a619d6ea01a0620f",
     "branch": "main"
@@ -50,7 +50,7 @@ window.phet.chipper.dependencies = {
     "branch": "main"
   },
   "projectile-motion-drag": {
-    "sha": "6e2924a12ab7541b9150317f6b76402103a90397",
+    "sha": "41d957ec25d6b31f0bdf2d64fc8187d7453b4f0d",
     "branch": "master"
   },
   "query-string-machine": {
