@@ -10,7 +10,7 @@
     width: 100%;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); 
     /* position: sticky */
-    position: fixed;
+    /* position: fixed; */
     font-size: 1vw;
     -webkit-user-select: none;  /* Chrome, Safari */
             -moz-user-select: none;     /* Firefox */
@@ -152,6 +152,61 @@
     gap: .5rem;
 }
 
+.navigationContainer{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    /* gap: 5rem; */
+    -webkit-user-select: none;  /* Chrome, Safari */
+            -moz-user-select: none;     /* Firefox */
+            -ms-user-select: none;      /* Internet Explorer/Edge */
+            user-select: none; 
+}
+
+.section {
+    display: none;
+    margin-top: 2rem;
+    width: 100%;
+    /* margin-left: 10rem; */
+    align-items: flex-start;
+    
+}
+.section.active {
+    display: block;
+}
+.navigationContainer {
+    margin-bottom: 20px;
+}
+.navigationContainer a {
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+.navigationContainer a.active {
+    color: red;
+}
+.verticalLine{
+    width: 100%;
+    background-color: black;
+    height: .1rem;
+}
+
+.websiteContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-left: 4%;
+}
+
+.webLinks{
+    display: flex;
+    justify-content: center;
+}
 @media (max-width: 400px) {
     .infoContainer {
         width: 30rem;
@@ -165,6 +220,13 @@
     .infoContainer div{
         width: 100%;
     }
+    .navigationContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .webListContainer{
+        min-height: 80rem !important;
+    }
 }
 
 @media (min-width: 400px) and (max-width: 800px){
@@ -176,6 +238,10 @@
     }
     .infoContainer div{
         width: 100%;
+    }
+    .navigationContainer{
+        display: flex;
+        flex-direction: column;
     }
 }
 
