@@ -1,10 +1,10 @@
 window.phet.chipper.project = 'coriolis-force';
 window.phet.chipper.version = '1.0.0-dev.0';
-window.phet.chipper.buildTimestamp = '2024-06-12 00:11:59 UTC';
+window.phet.chipper.buildTimestamp = '2024-10-11 17:03:36 UTC';
 window.phet.chipper.brand = 'adapted-from-phet';
 window.phet.chipper.locale = 'en';
 window.phet.chipper.dependencies = {
-  "comment": "# coriolis-force 1.0.0-dev.0 Tue Jun 11 2024 20:12:03 GMT-0400 (Eastern Daylight Time)",
+  "comment": "# coriolis-force 1.0.0-dev.0 Fri Oct 11 2024 11:03:42 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "347e7eeac1424adb6023fb06a619d6ea01a0620f",
     "branch": "main"
@@ -22,7 +22,7 @@ window.phet.chipper.dependencies = {
     "branch": "main"
   },
   "coriolis-force": {
-    "sha": "cda5a796c3711f68558990f826bff5aff318548f",
+    "sha": "f5c473c5fcd2a1e3d9f1d4b426bf5092a0863df9",
     "branch": "main"
   },
   "dot": {
@@ -94,7 +94,7 @@ window.phet.chipper.strings = (y=>{let m={};let x=[];let s=[];let X=null;let S=n
 window.phet.chipper.stringMetadata = {"JOIST/simTitleWithScreenNamePattern":{"phetioDocumentation":"This pattern is used when a multi-screen simulation is only displaying one screen."},"JOIST/versionPattern":{"phetioReadOnly":true},"JOIST/credits.title":{"phetioReadOnly":true},"JOIST/credits.leadDesign":{"phetioReadOnly":true},"JOIST/credits.softwareDevelopment":{"phetioReadOnly":true},"JOIST/credits.team":{"phetioReadOnly":true},"JOIST/credits.contributors":{"phetioReadOnly":true},"JOIST/credits.qualityAssurance":{"phetioReadOnly":true},"JOIST/credits.graphicArts":{"phetioReadOnly":true},"JOIST/credits.soundDesign":{"phetioReadOnly":true},"JOIST/credits.thanks":{"phetioReadOnly":true}};
 window.phet.chipper.isDebugBuild = false;
 window.phet.chipper.allowLocaleSwitching = true;
-window.phet.chipper.packageObject = {"name":"coriolis-force","version":"1.0.0-dev.0","license":"GPL-3.0","repository":{"type":"git","url":"https://github.com/phetsims/coriolis-force.git"},"devDependencies":{"grunt":"~1.5.3"},"phet":{"requirejsNamespace":"CORIOLIS_FORCE","simulation":true,"runnable":true,"supportedBrands":["phet","adapted-from-phet"],"preload":["../sherpa/lib/poly-decomp-0.3.0.js","../sherpa/lib/p2-0.7.1.js","../sherpa/lib/three-r104.js"],"supportsOutputJS":true,"simFeatures":{"supportsDynamicLocale":true}},"eslintConfig":{"extends":"../chipper/eslint/sim_eslintrc.js","overrides":[{"files":["**/*.ts"],"rules":{"@typescript-eslint/ban-ts-comment":["error",{"ts-expect-error":true,"ts-ignore":true,"ts-check":true,"ts-nocheck":true}]}}]}};
+window.phet.chipper.packageObject = {"name":"coriolis-force","version":"1.0.0-dev.0","license":"GPL-3.0","repository":{"type":"git","url":"https://github.com/phetsims/coriolis-force.git"},"devDependencies":{"grunt":"~1.5.3"},"phet":{"requirejsNamespace":"CORIOLIS_FORCE","simulation":true,"runnable":true,"supportedBrands":["phet","adapted-from-phet"],"preload":["../sherpa/lib/poly-decomp-0.3.0.js","../sherpa/lib/p2-0.7.1.js","../sherpa/lib/three-r104.js","../coriolis-force/js/common/simData.js","../coriolis-force/js/common/bundle2.js","../coriolis-force/js/common/d3.v7.min.js","../coriolis-force/js/common/mathquill.js"],"supportsOutputJS":true,"simFeatures":{"supportsDynamicLocale":true}},"eslintConfig":{"extends":"../chipper/eslint/sim_eslintrc.js","overrides":[{"files":["**/*.ts"],"rules":{"@typescript-eslint/ban-ts-comment":["error",{"ts-expect-error":true,"ts-ignore":true,"ts-check":true,"ts-nocheck":true}]}}]}};
 // Copyright 2018-2021, University of Colorado Boulder
 /**
  * Detects if the browser in use is Internet Explorer, and shows an error page if so.
