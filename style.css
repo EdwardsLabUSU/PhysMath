@@ -1,4 +1,4 @@
-.title-box{
+.title-box {
     display: flex;
     background-color: cornsilk;
     text-align: center;
@@ -8,65 +8,77 @@
     height: 8rem;
     min-height: 1vh;
     width: 100%;
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
     /* position: sticky */
     position: fixed;
     font-size: 1vw;
-    -webkit-user-select: none;  /* Chrome, Safari */
-            -moz-user-select: none;     /* Firefox */
-            -ms-user-select: none;      /* Internet Explorer/Edge */
-            user-select: none; 
-    
-    
+    -webkit-user-select: none;
+    /* Chrome, Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+
+
 }
 
-.dynamicsLab-text{
+.dynamicsLab-text {
     display: flex;
     font-size: 1vw;
 }
 
-.physics-details{
+.physics-details {
     font-size: 1.2rem;
     font-style: italic;
 }
 
-#lab-title{
+#lab-title {
     font-size: 35px;
 
     font-style: italic;
 }
 
-.lab-color{
+.lab-color {
     font-size: 35px;
     font-style: italic;
-    color: darkturquoise;
+    color: rgb(25, 59, 255)
 }
 
-.vertical-border{
+.vertical-border {
     height: 5rem;
     color: blue;
     border-left: .2rem solid black;
 }
-.uni-text{
+
+.uni-text {
     font-size: 35px;
     font-style: italic;
 }
-.physicsContainer{
+
+.physicsContainer {
     margin-top: 10rem;
     width: 99%;
 }
 
-.aboutUsText{
+.aboutUsText {
     font-size: 40vw;
 }
 
+.bead-on-hoop-text {
+    color: "black";
+    text-decoration: "none"
+}
 
-.cardsContainer{
+
+
+.cardsContainer {
     min-width: 25rem;
+    color: black;
     width: 20vw;
     min-height: 15rem;
     /* height: 27vh; */
-    background-color: rgb(242, 242, 250);
+    background-color: rgb(221, 221, 221);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -75,22 +87,24 @@
     align-items: center;
     text-decoration: none !important;
 }
-.cardsContainer:hover{
+
+.cardsContainer:hover {
     /* min-width: 25rem;
     max-width: 20%;
     min-height: 15rem;
     height: 20%; */
-    background-color: rgb(215, 215, 229);
+    background-color: rgb(211, 211, 212);
     border-radius: 1rem;
+    color: black;
     /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; */
-    box-shadow: 0 1px 15px -5px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 1px 15px -5px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s;
 }
 
-.sim-cards-container{
+.sim-cards-container {
     width: 98%;
     margin-top: 1rem;
     overflow: scroll;
@@ -102,19 +116,20 @@
     min-height: 17rem;
 }
 
-.imageContainer{
+.imageContainer {
     border-radius: 1rem;
 }
 
-.image{
+.image {
     min-width: 22rem;
     width: 19vw;
-    height: 13rem; 
+    height: 13rem;
     /* height: 19vh; */
     border-radius: 1rem;
     margin-top: 1rem;
 }
-.infoContainer{
+
+.infoContainer {
     /* bottom: 0;
     position: absolute; */
     border-top: 1px solid black;
@@ -128,28 +143,37 @@
     padding-top: 1rem;
 }
 
-.contactContainer{
+.contactContainer {
     width: 25%;
     color: black;
 }
 
-.contactText{
+.contactText {
     color: black;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.cardsHolderContainer{
-    width: 98%; 
+.cardsHolderContainer {
+    width: 98%;
     /* min-height: 40rem;  */
     min-height: 80vh !important;
     /* padding-bottom: 25rem; */
 }
 
-.linksContainer{
+.linksContainer {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    color: #23527B;
+}
+
+.linksContainer a {
+    color: #23527B;
+}
+
+.email{
+    color: #23527B;
 }
 
 @media (max-width: 400px) {
@@ -159,87 +183,101 @@
         gap: 1rem;
         min-height: 20rem;
     }
-    .cardsHolderContainer{
+
+    .cardsHolderContainer {
         padding-bottom: 25rem;
     }
-    .infoContainer div{
+
+    .infoContainer div {
         width: 100%;
     }
 }
 
-@media (min-width: 400px) and (max-width: 800px){
+@media (min-width: 400px) and (max-width: 800px) {
     .infoContainer {
         width: 40rem;
         flex-direction: column;
         gap: 1rem;
         min-height: 20rem;
     }
-    .infoContainer div{
+
+    .infoContainer div {
         width: 100%;
     }
 }
 
 
-.cardsContainer{
+.cardsContainer {
     font-size: 100%;
 }
 
-@media (min-width: 1024px) and (max-width: 1279px){
-    .cardsContainer{
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .cardsContainer {
         width: 30rem;
         height: 5rem;
     }
-    .image{
+
+    .image {
         width: 29rem;
         height: 4rem;
     }
 }
-@media (min-width: 1280px) and (max-width: 1679px){
-    .cardsContainer{
+
+@media (min-width: 1280px) and (max-width: 1679px) {
+    .cardsContainer {
         width: 30rem;
         height: 17rem;
     }
-    .image{
+
+    .image {
         width: 29rem;
         height: 14rem;
     }
 }
-@media (min-width: 1680px) and (max-width: 1920px){
-    .cardsContainer{
+
+@media (min-width: 1680px) and (max-width: 1920px) {
+    .cardsContainer {
         width: 33rem;
         height: 18rem;
     }
-    .image{
+
+    .image {
         width: 29rem;
         height: 14rem;
     }
 }
-@media (min-width: 1920px) and (max-width: 2560px){
-    .cardsContainer{
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+    .cardsContainer {
         width: 36rem;
         height: 20rem;
     }
-    .image{
+
+    .image {
         width: 35rem;
         height: 15rem;
     }
 }
-@media (min-width: 2560px) and (max-width: 3840px){
-    .cardsContainer{
+
+@media (min-width: 2560px) and (max-width: 3840px) {
+    .cardsContainer {
         width: 40rem;
         height: 22rem;
     }
-    .image{
+
+    .image {
         width: 39rem;
         height: 17rem;
     }
 }
-@media (min-width: 3839px){
-    .cardsContainer{
+
+@media (min-width: 3839px) {
+    .cardsContainer {
         width: 43rem;
         height: 24rem;
     }
-    .image{
+
+    .image {
         width: 42rem;
         height: 19rem;
     }
