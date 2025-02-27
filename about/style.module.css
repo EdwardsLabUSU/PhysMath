@@ -1,3 +1,6 @@
+a { 
+    color: #23527B;
+}
 .title-box{
     display: flex;
     background-color: cornsilk;
@@ -35,7 +38,7 @@
 .lab-color{
     font-size: 35px;
     font-style: italic;
-    color: darkturquoise;
+    color: rgb(25, 59, 255)
 }
 
 .vertical-border{
