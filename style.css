@@ -107,7 +107,7 @@
 .sim-cards-container {
     width: 98%;
     margin-top: 1rem;
-    overflow: scroll;
+    overflow: hidden;
     display: flex;
     gap: 1rem;
     /* background-color: cadetblue; */
@@ -158,6 +158,8 @@
     width: 98%;
     /* min-height: 40rem;  */
     min-height: 80vh !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
     /* padding-bottom: 25rem; */
 }
 
