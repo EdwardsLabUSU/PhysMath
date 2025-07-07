@@ -2,26 +2,31 @@ a {
     color: #23527B;
 }
 
-.title-box{
+
+
+
+.title-box {
     display: flex;
     background-color: cornsilk;
     text-align: center;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 8rem;
     min-height: 1vh;
     width: 100%;
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); 
-    /* position: sticky */
-    /* position: fixed; */
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+    position: fixed;
     font-size: 1vw;
-    -webkit-user-select: none;  /* Chrome, Safari */
-            -moz-user-select: none;     /* Firefox */
-            -ms-user-select: none;      /* Internet Explorer/Edge */
-            user-select: none; 
-    
-    
+    -webkit-user-select: none;
+    /* Chrome, Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+
+
 }
 
 .physMath-text{
@@ -34,7 +39,7 @@ a {
     font-style: italic;
 }
 
-#lab-title{
+.lab-title{
     font-size: 35px;
 
     font-style: italic;
@@ -69,27 +74,17 @@ a {
     min-width: 25rem;
     width: 20vw;
     min-height: 15rem;
-    /* height: 27vh; */
     background-color: rgb(242, 242, 250);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* gap: .5rem; */
     align-items: center;
     text-decoration: none !important;
 }
 .cardsContainer:hover{
-    /* min-width: 25rem;
-    max-width: 20%;
-    min-height: 15rem;
-    height: 20%; */
     background-color: rgb(215, 215, 229);
     border-radius: 1rem;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     box-shadow: 0 1px 15px -5px rgba(0, 0, 0, 0.5); 
     transition: box-shadow 0.3s;
 }
@@ -100,9 +95,7 @@ a {
     overflow: scroll;
     display: flex;
     gap: 1rem;
-    /* background-color: cadetblue; */
     align-items: center;
-    /* height: 40%; */
     min-height: 17rem;
 }
 
@@ -114,19 +107,14 @@ a {
     min-width: 22rem;
     width: 19vw;
     height: 13rem; 
-    /* height: 19vh; */
     border-radius: 1rem;
     margin-top: 1rem;
 }
 .infoContainer{
-    /* bottom: 0;
-    position: absolute; */
     border-top: 1px solid black;
     min-width: 20rem;
     width: 70%;
     height: 20vh;
-    /* background-color: blue; */
-    /* position: fixed */
     display: flex;
     justify-content: space-around;
     padding-top: 1rem;
@@ -145,9 +133,7 @@ a {
 
 .cardsHolderContainer{
     width: 98%; 
-    /* min-height: 40rem;  */
     min-height: 80vh !important;
-    /* padding-bottom: 25rem; */
 }
 
 .linksContainer{
@@ -157,13 +143,13 @@ a {
 }
 
 .navigationContainer{
-    margin-top: 1rem;
+    margin-top: 10rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    /* gap: 5rem; */
+    
     -webkit-user-select: none;  /* Chrome, Safari */
             -moz-user-select: none;     /* Firefox */
             -ms-user-select: none;      /* Internet Explorer/Edge */
@@ -174,7 +160,6 @@ a {
     display: none;
     margin-top: 2rem;
     width: 100%;
-    /* margin-left: 10rem; */
     align-items: flex-start;
     
 }

@@ -1,22 +1,30 @@
 a { 
     color: #23527B;
 }
-.title-box{
+.title-box {
     display: flex;
     background-color: cornsilk;
     text-align: center;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 8rem;
     min-height: 1vh;
-    max-height: 10rem;
     width: 100%;
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); 
-    /* font-size: 1vw; */
-    -webkit-user-select: none;  /* Chrome, Safari */
-            -moz-user-select: none;     /* Firefox */
-            -ms-user-select: none;      /* Internet Explorer/Edge */
-            user-select: none; 
+    /* box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+    /* position: sticky */
+    position: fixed;
+    font-size: 1vw;
+    -webkit-user-select: none;
+    /* Chrome, Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+
+
 }
 
 .physMath-text{
@@ -25,12 +33,12 @@ a {
 
 }
 
-.physics-details p{
+.physics-details {
     font-size: 1.2rem;
     font-style: italic;
 }
 
-#lab-title{
+.lab-title{
     font-size: 35px;
     font-style: italic;
 }
@@ -121,15 +129,13 @@ a {
     border-radius: 1rem;
     margin-top: 1rem;
 }
-.infoContainer{
-    bottom: 0;
-    position: absolute;
-    /* height: ; */
+.infoContainer {
+    /* bottom: 0;
+    position: absolute; */
     border-top: 1px solid black;
-    margin-top: 10rem;
     min-width: 20rem;
     width: 70%;
-    height: 10rem;
+    height: 20vh;
     /* background-color: blue; */
     /* position: fixed */
     display: flex;

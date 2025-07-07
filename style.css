@@ -2,14 +2,15 @@
     display: flex;
     background-color: cornsilk;
     text-align: center;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 8rem;
     min-height: 1vh;
     width: 100%;
+    
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
-    /* position: sticky */
+    
     position: fixed;
     font-size: 1vw;
     -webkit-user-select: none;
@@ -23,20 +24,38 @@
 
 }
 
+body {
+    min-height: 100vh; 
+    background-color: azure; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 100vw; 
+    position: relative;
+
+}
+
 .physMath-text {
     display: flex;
     font-size: 1vw;
 }
 
 .physics-details {
-    font-size: 1.2rem;
-    font-style: italic;
+    font-size: 1.2rem !important;
+    font-style: italic !important;
 }
 
-#lab-title {
+.lab-title {
     font-size: 35px;
 
     font-style: italic;
+}
+
+
+.sim-rep{
+    font-size: 2rem;
+    font-style: italic;
+    margin-left: 1rem;
 }
 
 .lab-color {
@@ -77,29 +96,21 @@
     color: black;
     width: 20vw;
     min-height: 15rem;
-    /* height: 27vh; */
+    
     background-color: rgb(221, 221, 221);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* gap: .5rem; */
+    
     align-items: center;
     text-decoration: none !important;
 }
 
 .cardsContainer:hover {
-    /* min-width: 25rem;
-    max-width: 20%;
-    min-height: 15rem;
-    height: 20%; */
     background-color: rgb(211, 211, 212);
     border-radius: 1rem;
     color: black;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     box-shadow: 0 1px 15px -5px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s;
 }
@@ -107,12 +118,10 @@
 .sim-cards-container {
     width: 98%;
     margin-top: 1rem;
-    overflow: hidden;
+    overflow: scroll;
     display: flex;
     gap: 1rem;
-    /* background-color: cadetblue; */
     align-items: center;
-    /* height: 40%; */
     min-height: 17rem;
 }
 
@@ -124,20 +133,17 @@
     min-width: 22rem;
     width: 19vw;
     height: 13rem;
-    /* height: 19vh; */
     border-radius: 1rem;
     margin-top: 1rem;
 }
 
 .infoContainer {
-    /* bottom: 0;
-    position: absolute; */
+    
     border-top: 1px solid black;
     min-width: 20rem;
     width: 70%;
     height: 20vh;
-    /* background-color: blue; */
-    /* position: fixed */
+    
     display: flex;
     justify-content: space-around;
     padding-top: 1rem;
@@ -156,11 +162,11 @@
 
 .cardsHolderContainer {
     width: 98%;
-    /* min-height: 40rem;  */
+    
     min-height: 80vh !important;
     overflow-y: hidden !important;
     overflow-x: hidden !important;
-    /* padding-bottom: 25rem; */
+    
 }
 
 .linksContainer {
