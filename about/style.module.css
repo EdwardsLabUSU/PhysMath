@@ -1,6 +1,33 @@
 a { 
     color: #23527B;
 }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #6f96b8 azure;
+    
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-y: scroll;
+}
+
+main {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    
+}
+
+
 .title-box {
     display: flex;
     background-color: cornsilk;
@@ -8,12 +35,11 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 8rem;
     min-height: 1vh;
     width: 100%;
-    /* box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3); */
+
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
-    /* position: sticky */
+
     position: fixed;
     font-size: 1vw;
     -webkit-user-select: none;
@@ -177,6 +203,13 @@ a {
     .aboutContainer p{
         font-size: 1.2vw;
     }
+    main {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 2rem;
+}
 }
 
 @media (min-width: 2001){
@@ -214,6 +247,13 @@ a {
     .aboutContainer p{
         font-size: 1.1rem;
     }
+    main {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 2rem;
+}
 }
 
 @media (min-width: 400px) and (max-width: 800px){
@@ -229,4 +269,11 @@ a {
     .aboutContainer p{
         font-size: 1.1rem;
     }
+    main {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 2rem;
+}
 }

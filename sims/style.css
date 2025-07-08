@@ -3,6 +3,10 @@ a {
 }
 
 
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #6f96b8 azure;
+}
 
 
 .title-box {
@@ -12,7 +16,7 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 8rem;
+    /* height: 8rem; */
     min-height: 1vh;
     width: 100%;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
@@ -143,12 +147,13 @@ a {
 }
 
 .navigationContainer{
-    margin-top: 10rem;
+    margin-top: 12rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+
     
     -webkit-user-select: none;  /* Chrome, Safari */
             -moz-user-select: none;     /* Firefox */
