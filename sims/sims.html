@@ -1,274 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>PhysMath: Interactive Physics Simulations</title>
-</head>
-<body style="min-height: 100vh; background-color: azure; display: flex; flex-direction: column; align-items: center; position: relative;">
+  </head>
+  <body
+    style="
+      min-height: 100vh;
+      background-color: azure;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    "
+  >
     <header class="title-box">
-        <h1 class="physMath-text">
-            <span class="lab-title">Phys</span>
-            <span class="lab-color">Math</span>
-        </h1>
-        <p class="physics-details">INTERACTIVE PHYSICS SIMULATIONS</p>
+      <h1 class="physMath-text">
+        <span class="lab-title">Phys</span>
+        <span class="lab-color">Math</span>
+      </h1>
+      <p class="physics-details">INTERACTIVE PHYSICS SIMULATIONS</p>
     </header>
-    
+
     <nav class="navigationContainer">
-        <a onclick="showSection('classical', this)" class="active">Classical mechanics</a>
-        <a onclick="showSection('electricity', this)">Electricity, Magnets, and Circuits</a>
-        <a onclick="showSection('thermo', this)">Thermodynamics and Statistical mechanics</a>
-        <a onclick="showSection('quantum', this)">Quantum</a>
-        <!-- <a onclick="showSection('optic', this)">Optic</a> -->
-        <a onclick="showSection('wave', this)">Sound and Waves</a>
-        <a onclick="showSection('nuclear', this)">Nuclear and particle physics</a>
-        <!-- <a onclick="showSection('fluid', this)">Fluid mechanics</a>
+      <a onclick="showSection('classical', this)" class="active"
+        >Classical mechanics</a
+      >
+      <a onclick="showSection('electricity', this)"
+        >Electricity, Magnets, and Circuits</a
+      >
+      <a onclick="showSection('thermo', this)"
+        >Thermodynamics and Statistical mechanics</a
+      >
+      <a onclick="showSection('quantum', this)">Quantum</a>
+      <!-- <a onclick="showSection('optic', this)">Optic</a> -->
+      <a onclick="showSection('wave', this)">Sound and Waves</a>
+      <a onclick="showSection('nuclear', this)">Nuclear and particle physics</a>
+      <!-- <a onclick="showSection('fluid', this)">Fluid mechanics</a>
         <a onclick="showSection('acoustic', this)">Acoustics</a> -->
     </nav>
-    
+
     <div class="verticalLine"></div>
-    <div style="width: 100%; justify-content: flex-start; align-items: flex-start; display: flex; height: 70vh; min-height: 40rem;" class="webListContainer">
-        <div id="classical" class="section active">
-            <div class="websiteContainer">
-                <div class="webLinks">
-                    <p>Projectile motion: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/projectile-motion" target="_blank">https://phet.colorado.edu/en/simulations/projectile-motion</a>
-                </div>
-                <div class="webLinks">
-                    <p>Masses and Springs: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/masses-and-springs" target="_blank">https://phet.colorado.edu/en/simulations/masses-and-springs</a>
-                </div>
-                <div class="webLinks">
-                    <p>Pendulum Lab: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/pendulum-lab" target="_blank">https://phet.colorado.edu/en/simulations/pendulum-lab</a>
-                </div>
-                <div class="webLinks">
-                    <p>Collision Lab: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/collision-lab" target="_blank">https://phet.colorado.edu/en/simulations/collision-lab</a>
-                </div>
-                <div class="webLinks">
-                    <p>Ladybug Revolution: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/rotation/" target="_blank">https://phet.colorado.edu/en/simulations/rotation/</a>
-                </div>
-                <div class="webLinks">
-                    <p>Gravity and Orbits: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html" target="_blank">https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Fluid Pressure and Flow:  </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/fluid-pressure-and-flow" target="_blank">https://phet.colorado.edu/en/simulations/fluid-pressure-and-flow</a>
-                </div>
-            </div>
+    <div
+      style="
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: flex;
+        height: 70vh;
+        min-height: 40rem;
+      "
+      class="webListContainer"
+    >
+      <div id="classical" class="section active">
+        <div class="websiteContainer">
+          <div class="webLinks">
+            <p>Projectile motion:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/projectile-motion"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/projectile-motion</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Masses and Springs:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/masses-and-springs"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/masses-and-springs</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Pendulum Lab:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/pendulum-lab"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/pendulum-lab</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Collision Lab:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/collision-lab"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/collision-lab</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Ladybug Revolution:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/rotation/"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/rotation/</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Gravity and Orbits:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Fluid Pressure and Flow:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/fluid-pressure-and-flow"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/fluid-pressure-and-flow</a
+            >
+          </div>
         </div>
-        <div id="electricity" class="section">
-            <div class="websiteContainer">
-                <div class="webLinks">
-                    <p>Energy Skate Park: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_all.html" target="_blank">https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Hooks Law:  </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/hookes-law/latest/hookes-law_all.html" target="_blank">https://phet.colorado.edu/sims/html/hookes-law/latest/hookes-law_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Coulomb’s Law: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_all.html" target="_blank">https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Charges and Fields: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html" target="_blank">https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Ohm’s Law:  </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_en.html" target="_blank">https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_en.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Circuit Construction Kit: AC: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/circuit-construction-kit-ac" target="_blank">https://phet.colorado.edu/en/simulations/circuit-construction-kit-ac</a>
-                </div>
-                <div class="webLinks">
-                    <p>Circuit Construction Kit: DC:  </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html" target="_blank">https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Capacitor Lab:  </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/capacitor-lab" target="_blank">https://phet.colorado.edu/en/simulations/capacitor-lab</a>
-                </div>
-                <div class="webLinks">
-                    <p>Resistance in a Wire:   </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/resistance-in-a-wire/latest/resistance-in-a-wire_all.html" target="_blank">https://phet.colorado.edu/sims/html/resistance-in-a-wire/latest/resistance-in-a-wire_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Magnets and Electromagnets:   </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/magnets-and-electromagnets" target="_blank">https://phet.colorado.edu/en/simulations/magnets-and-electromagnets</a>
-                </div>
-                <div class="webLinks">
-                    <p>Faradays Law:   </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_all.html" target="_blank">https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_all.html</a>
-                </div>
-            </div>
+      </div>
+      <div id="electricity" class="section">
+        <div class="websiteContainer">
+          <div class="webLinks">
+            <p>Energy Skate Park:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Hooks Law:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/hookes-law/latest/hookes-law_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/hookes-law/latest/hookes-law_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Coulomb’s Law:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Charges and Fields:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Ohm’s Law:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_en.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_en.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Circuit Construction Kit: AC:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/circuit-construction-kit-ac"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/circuit-construction-kit-ac</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Circuit Construction Kit: DC:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Capacitor Lab:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/capacitor-lab"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/capacitor-lab</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Resistance in a Wire:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/resistance-in-a-wire/latest/resistance-in-a-wire_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/resistance-in-a-wire/latest/resistance-in-a-wire_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Magnets and Electromagnets:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/magnets-and-electromagnets"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/magnets-and-electromagnets</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Faradays Law:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_all.html</a
+            >
+          </div>
         </div>
-        <div id="thermo" class="section">
-            <div class="websiteContainer">
-                <div class="webLinks">
-                    <p>State of matter: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/states-of-matter/latest/states-of-matter_all.html" target="_blank">https://phet.colorado.edu/sims/html/states-of-matter/latest/states-of-matter_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Gas properties: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html" target="_blank">https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Energy forms and changes: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html" target="_blank">https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html</a>
-                </div>
-                
-            </div>
+      </div>
+      <div id="thermo" class="section">
+        <div class="websiteContainer">
+          <div class="webLinks">
+            <p>State of matter:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/states-of-matter/latest/states-of-matter_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/states-of-matter/latest/states-of-matter_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Gas properties:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Energy forms and changes:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_all.html</a
+            >
+          </div>
         </div>
-        <div id="quantum" class="section">
-            <div class="websiteContainer">
-                <div class="webLinks">
-                    <p>Quantum Wave Interference: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/quantum-wave-interference" target="_blank">https://phet.colorado.edu/en/simulations/quantum-wave-interference</a>
-                </div>
-                <div class="webLinks">
-                    <p>Quantum Bound States: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/bound-states" target="_blank">https://phet.colorado.edu/en/simulations/bound-states</a>
-                </div>
-                <div class="webLinks">
-                    <p>Quantum Tunneling and Wave Packets: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/quantum-tunneling" target="_blank">https://phet.colorado.edu/en/simulations/quantum-tunneling</a>
-                </div>
-                <div class="webLinks">
-                    <p>Models of the Hydrogen Atom: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/hydrogen-atom" target="_blank">https://phet.colorado.edu/en/simulations/hydrogen-atom</a>
-                </div>
-                
-            </div>
+      </div>
+      <div id="quantum" class="section">
+        <div class="websiteContainer">
+          <div class="webLinks">
+            <p>Quantum Wave Interference:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/quantum-wave-interference"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/quantum-wave-interference</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Quantum Bound States:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/bound-states"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/bound-states</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Quantum Tunneling and Wave Packets:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/quantum-tunneling"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/quantum-tunneling</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Models of the Hydrogen Atom:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/hydrogen-atom"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/hydrogen-atom</a
+            >
+          </div>
         </div>
-        
-        <div id="wave" class="section">
-            <div class="websiteContainer">
-                <div class="webLinks">
-                    <p>Wave on a String: </p>
-                    <div style="width: 1rem;"></div>
-                <a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html" target="_blank">https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Sound Waves: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/sound-waves/latest/sound-waves_all.html" target="_blank">https://phet.colorado.edu/sims/html/sound-waves/latest/sound-waves_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Wave Interference: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/wave-interference/latest/wave-interference_all.html" target="_blank">https://phet.colorado.edu/sims/html/wave-interference/latest/wave-interference_all.html</a>
-                </div>
-                <div class="webLinks">
-                    <p>Fourier: Making Waves: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/sims/html/fourier-making-waves/latest/fourier-making-waves_all.html" target="_blank">https://phet.colorado.edu/sims/html/fourier-making-waves/latest/fourier-making-waves_all.html</a>
-                </div>
-                
-            </div>
+      </div>
+
+      <div id="wave" class="section">
+        <div class="websiteContainer">
+          <div class="webLinks">
+            <p>Wave on a String:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Sound Waves:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/sound-waves/latest/sound-waves_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/sound-waves/latest/sound-waves_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Wave Interference:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/wave-interference/latest/wave-interference_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/wave-interference/latest/wave-interference_all.html</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Fourier: Making Waves:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/sims/html/fourier-making-waves/latest/fourier-making-waves_all.html"
+              target="_blank"
+              >https://phet.colorado.edu/sims/html/fourier-making-waves/latest/fourier-making-waves_all.html</a
+            >
+          </div>
         </div>
-        <div id="nuclear" class="section">
-            <div class="websiteContainer">
-                <div class="webLinks">
-                    <p>Alpha Decay: </p>
-                    <div style="width: 1rem;"></div>
-                <a href="https://phet.colorado.edu/en/simulations/alpha-decay" target="_blank">https://phet.colorado.edu/en/simulations/alpha-decay</a>
-                </div>
-                <div class="webLinks">
-                    <p>Beta Decay: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/beta-decay" target="_blank">https://phet.colorado.edu/en/simulations/beta-decay</a>
-                </div>
-                <div class="webLinks">
-                    <p>Nuclear Fission: </p>
-                    <div style="width: 1rem;"></div>
-                    <a href="https://phet.colorado.edu/en/simulations/nuclear-fission" target="_blank">https://phet.colorado.edu/en/simulations/nuclear-fission</a>
-                </div>
-                
-            </div>
+      </div>
+      <div id="nuclear" class="section">
+        <div class="websiteContainer">
+          <div class="webLinks">
+            <p>Alpha Decay:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/alpha-decay"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/alpha-decay</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Beta Decay:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/beta-decay"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/beta-decay</a
+            >
+          </div>
+          <div class="webLinks">
+            <p>Nuclear Fission:</p>
+            <div style="width: 1rem"></div>
+            <a
+              href="https://phet.colorado.edu/en/simulations/nuclear-fission"
+              target="_blank"
+              >https://phet.colorado.edu/en/simulations/nuclear-fission</a
+            >
+          </div>
         </div>
+      </div>
     </div>
-    
-     
+
     <div class="infoContainer">
-        <div class="linksContainer">
-            <a href="../index.html">Back to main page</a>
-            <a href="../about/about.html">About PhysMath</a>
-            <!-- <a href="../sims/sims.html">List of existing physics simulations</a> -->
+      <div class="linksContainer">
+        <a href="../index.html">Back to main page</a>
+        <a href="../about/about.html">About PhysMath</a>
+        <a href="https://usu.co1.qualtrics.com/jfe/form/SV_8GoIz84QcQtngTY"
+          >Survey on future simulation development</a
+        >
+
+        <!-- <a href="../sims/sims.html">List of existing physics simulations</a> -->
+      </div>
+      <div class="linksContainer">
+        <a href="https://www.usu.edu/accessibility/concern" target="_blank"
+          >File an accessibility concern</a
+        >
+      </div>
+      <div class="contactContainer">
+        <p class="contactText">Contact Us</p>
+        <div>
+          <p><a href="mailto:john.edwards@usu.edu">john.edwards@usu.edu</a></p>
+          <p>Utah State University</p>
+          <p>Logan, UT, USA</p>
         </div>
-        <div class="linksContainer">
-            <a href="https://www.usu.edu/accessibility/concern" target="_blank">File an accessibility concern</a>
-        </div>
-        <div class="contactContainer">
-            <p class="contactText">Contact Us</p>
-            <div>
-                <p><a href="mailto:john.edwards@usu.edu">john.edwards@usu.edu</a></p>
-                <p>Utah State University</p>
-                <p>Logan, UT, USA</p>
-            </div>
-        </div>
+      </div>
     </div>
     <script>
-        function showSection(sectionId, link) {
-            // Hide all sections
-            var sections = document.querySelectorAll('.section');
-            sections.forEach(function(section) {
-                section.classList.remove('active');
-            });
-
-            // Show the selected section
-            var activeSection = document.getElementById(sectionId);
-            activeSection.classList.add('active');
-
-            // Remove active class from all links
-            var links = document.querySelectorAll('.navigationContainer a');
-            links.forEach(function(link) {
-                link.classList.remove('active');
-            });
-
-            // Add active class to the clicked link
-            link.classList.add('active');
-        }
-
-        // Initialize by showing the first section
-        document.addEventListener('DOMContentLoaded', function() {
-            showSection('classical', document.querySelector('.navigationContainer a'));
+      function showSection(sectionId, link) {
+        // Hide all sections
+        var sections = document.querySelectorAll(".section");
+        sections.forEach(function (section) {
+          section.classList.remove("active");
         });
 
+        // Show the selected section
+        var activeSection = document.getElementById(sectionId);
+        activeSection.classList.add("active");
+
+        // Remove active class from all links
+        var links = document.querySelectorAll(".navigationContainer a");
+        links.forEach(function (link) {
+          link.classList.remove("active");
+        });
+
+        // Add active class to the clicked link
+        link.classList.add("active");
+      }
+
+      // Initialize by showing the first section
+      document.addEventListener("DOMContentLoaded", function () {
+        showSection(
+          "classical",
+          document.querySelector(".navigationContainer a")
+        );
+      });
     </script>
-</body>
-
-
+  </body>
 </html>
