@@ -103,9 +103,9 @@ body {
 
 
 .cardsContainer {
-    min-width: 25rem;
+    min-width: 30rem;
     color: black;
-    width: 20vw;
+    /* width: 20vw; */
     min-height: 15rem;
 
     background-color: rgb(221, 221, 221);
@@ -127,11 +127,11 @@ body {
 }
 
 .sim-cards-container {
-    width: 98%;
+    width: 100%;
     margin-top: 1rem;
     overflow: scroll;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
     overflow-y: hidden;
     min-height: 17rem;
