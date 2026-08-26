@@ -1,166 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>PhysMath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-      crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.module.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <header class="title-box">
-      <h1 class="physMath-text">
-        <span class="lab-title">Phys</span>
-        <span class="lab-color">Math</span>
-      </h1>
-      <p class="physics-details">INTERACTIVE PHYSICS SIMULATIONS</p>
-    </header>
-    <main>
-      <div class="aboutContainer">
-        <div class="physicsContainer">
-          <p style="font-weight: bold">How to cite PhysMath</p>
+    <header class="header">
+      <div class="header-content">
+        <div class="header-title">
+          <a href="../index.html" class="logo-link" aria-label="PhysMath home">
+          <div class="header-text">
+            <div class="header-text-title">
+              <h1 class="phys-text">Phys</h1>
+              <h1 class="math-text">Math</h1>
+            </div>
+
+            <h2 class="header-text-subtitle">
+              Interactive Physics Simulations
+            </h2>
+          </div>
+          </a>
         </div>
-        <div style="width: 100%; margin-left: 1rem">
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="header-links" id="primary-navigation">
+          <a class="header-link" href="../index.html#simulations"
+            >Simulations</a
+          >
+          <a class="header-link" href="../about/about.html">About</a>
+          <a class="header-link" href="mailto:john.edwards@usu.edu">Contact</a>
+          <a class="header-link" href="./cite.html">Cite</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="cite-container">
+      <div class="cite-heading">
+        <h2>How to cite PhysMath</h2>
+        <p>
+          If you mention the PhysMath software in a publication, please include
+          the citation below using your preferred style.
+        </p>
+      </div>
+
+      <div class="citation-list">
+        <article class="citation-card">
+          <div class="citation-card-header">
+            <h3>APA</h3>
+            <button
+              class="copy-button"
+              type="button"
+              data-copy="apa-citation"
+              aria-label="Copy APA citation"
+            >
+              Copy citation
+            </button>
+          </div>
+          <textarea readonly id="apa-citation" class="cite-text">
+Jafari Ghalehkohneh, S., Arnell, J., Hart, K., Swanson, H., Edwards, B., &amp; Edwards, J. (2025). Upper-division physics simulations with equation manipulation. Physical Review Physics Education Research, 21(1), 010151.</textarea
+          >
+        </article>
+
+        <article class="citation-card">
+          <div class="citation-card-header">
+            <h3>MLA</h3>
+            <button
+              class="copy-button"
+              type="button"
+              data-copy="mla-citation"
+              aria-label="Copy MLA citation"
+            >
+              Copy citation
+            </button>
+          </div>
+          <textarea readonly id="mla-citation" class="cite-text">
+Jafari Ghalehkohneh, Sadra, et al. "Upper-division physics simulations with equation manipulation." Physical Review Physics Education Research 21.1 (2025): 010151.</textarea
+          >
+        </article>
+
+        <article class="citation-card">
+          <div class="citation-card-header">
+            <h3>Chicago</h3>
+            <button
+              class="copy-button"
+              type="button"
+              data-copy="chicago-citation"
+              aria-label="Copy Chicago citation"
+            >
+              Copy citation
+            </button>
+          </div>
+          <textarea readonly id="chicago-citation" class="cite-text">
+Jafari Ghalehkohneh, Sadra, Jared Arnell, Kaden Hart, Hillary Swanson, Boyd Edwards, and John Edwards. "Upper-division physics simulations with equation manipulation." Physical Review Physics Education Research 21, no. 1 (2025): 010151.</textarea
+          >
+        </article>
+
+        <article class="citation-card">
+          <div class="citation-card-header">
+            <h3>Harvard</h3>
+            <button
+              class="copy-button"
+              type="button"
+              data-copy="harvard-citation"
+              aria-label="Copy Harvard citation"
+            >
+              Copy citation
+            </button>
+          </div>
+          <textarea readonly id="harvard-citation" class="cite-text">
+Jafari Ghalehkohneh, S., Arnell, J., Hart, K., Swanson, H., Edwards, B. and Edwards, J., 2025. Upper-division physics simulations with equation manipulation. Physical Review Physics Education Research, 21(1), p.010151.</textarea
+          >
+        </article>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-about">
+          <a
+            class="footer-logo"
+            href="../index.html"
+            aria-label="PhysMath home"
+          >
+            <span class="footer-logo-phys">Phys</span
+            ><span class="footer-logo-math">Math</span>
+          </a>
           <p>
-            If you mention the PhysMath software suite in a publication, we ask
-            that you include the citation below.
+            Interactive physics simulations that connect mathematical equations
+            to physical behavior.
           </p>
         </div>
-        <div class="citation-container">
-          <div class="formatDiv">
-            <div class="format-header">
-              <p class="citation-format">APA:</p>
-            </div>
-            
-            <textarea
-              id="APA"
-              readonly
-              style="width: 100%; resize: none;"
-            >
-Jafari Ghalehkohneh, S., Arnell, J., Hart, K., Swanson, H., Edwards, B., & Edwards, J. (2025). Upper-division physics simulations with equation manipulation. Physical Review Physics Education Research, 21(1), 010151.</textarea
-            >
-            <div>
-              <button onclick="copyCitation('APA')" class="copy-button">
-                Copy
-              </button>
-            </div>
-            <div class="horizontal-line"></div>
+
+        <div class="footer-nav">
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <a href="../index.html#simulations">Simulations</a>
+            <a href="./cite.html">How to cite</a>
           </div>
-          <div class="formatDiv">
-            <div class="format-header">
-              <p class="citation-format">MLA:</p>
-            </div>
-           
-            <textarea
-              id="MLA"
-              readonly
-              style="width: 100%; resize: none"
+
+          <div class="footer-column">
+            <h3>Project</h3>
+            <a href="../about/about.html">About PhysMath</a>
+            <a href="mailto:john.edwards@usu.edu">Contact us</a>
+            <a href="https://www.usu.edu/accessibility/concern"
+              >Accessibility</a
             >
-Jafari Ghalehkohneh, Sadra, et al. "Upper-division physics simulations with equation manipulation." Physical Review Physics Education Research 21.1 (2025): 010151.</textarea
-            >
-            <div>
-              <button onclick="copyCitation('MLA')" class="copy-button">
-                Copy
-              </button>
-            </div>
-            <div class="horizontal-line"></div>
-          </div>
-          <div class="formatDiv">
-            <div class="format-header">
-              <p class="citation-format">Chicago:</p>
-            </div>
-            
-            <textarea
-              id="Chicago"
-              readonly
-              style="width: 100%; resize: none"
-            >
-Jafari Ghalehkohneh, Sadra, Jared Arnell, Kaden Hart, Hillary Swanson, Boyd Edwards, and John Edwards. "Upper-division physics simulations with equation manipulation." Physical Review Physics Education Research 21, no. 1 (2025): 010151.</textarea
-            >
-            <div>
-              <button onclick="copyCitation('Chicago')" class="copy-button">
-                Copy
-              </button>
-            </div>
-            <div class="horizontal-line"></div>
-          </div>
-          <div class="formatDiv">
-            <div class="format-header">
-              <p class="citation-format">Harvard:</p>
-            </div>
-            
-            <textarea
-              id="Harvard"
-              readonly
-              style="width: 100%; resize: none"
-            >
-Jafari Ghalehkohneh, S., Arnell, J., Hart, K., Swanson, H., Edwards, B. and Edwards, J., 2025. Upper-division physics simulations with equation manipulation. Physical Review Physics Education Research, 21(1), p.010151.</textarea
-            >
-            <div>
-              <button onclick="copyCitation('Harvard')" class="copy-button">
-                Copy
-              </button>
-            </div>
           </div>
         </div>
       </div>
 
-      <div class="infoContainer">
-        <div style="display: flex; flex-direction: column; gap: 0.5rem">
-          <a href="../index.html">Back to main page</a>
-          <a href="../sims/sims.html">List of existing physics simulations</a>
-          <a href="https://usu.co1.qualtrics.com/jfe/form/SV_8GoIz84QcQtngTY"
-            >Survey on future simulation development</a
-          >
-        </div>
-        <div class="linksContainer">
-          <a href="https://www.usu.edu/accessibility/concern" target="_blank"
-            >File an accessibility concern</a
-          >
-        </div>
-        <div class="contactContainer">
-          <p class="contactText">Contact Us</p>
-          <div>
-            <p>
-              <a href="mailto:john.edwards@usu.edu">john.edwards@usu.edu</a>
-            </p>
-            <p>Utah State University</p>
-            <p>Logan, UT, USA</p>
-          </div>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 PhysMath, Utah State University</p>
+        <p>Logan, Utah, USA</p>
       </div>
-    </main>
-    <footer>
-      <p>2025 PhysMath, Utah State University</p>
     </footer>
-
     <script>
-      function copyCitation(id) {
-        const citationInput = document.getElementById(id);
-        citationInput.select();
-        citationInput.setSelectionRange(0, 99999); // For mobile devices
+      const copyButtons = document.querySelectorAll(".copy-button");
 
-        try {
-          document.execCommand("copy");
-          // Optional: Show feedback to user
-          const button = event.target;
-          const originalText = button.textContent;
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const citation = document.getElementById(button.dataset.copy);
+
+          try {
+            await navigator.clipboard.writeText(citation.value);
+          } catch (error) {
+            citation.select();
+            document.execCommand("copy");
+            window.getSelection()?.removeAllRanges();
+          }
+
+          copyButtons.forEach((item) => {
+            item.textContent = "Copy citation";
+            item.classList.remove("copied");
+          });
+
           button.textContent = "Copied!";
-          button.style.backgroundColor = "#28a745";
-          setTimeout(() => {
-            button.textContent = originalText;
-            button.style.backgroundColor = "#007bff";
-          }, 2000);
-        } catch (err) {
-          console.error("Failed to copy text: ", err);
-        }
-      }
+          button.classList.add("copied");
+
+          window.setTimeout(() => {
+            button.textContent = "Copy citation";
+            button.classList.remove("copied");
+          }, 1800);
+        });
+      });
+
+      document.querySelectorAll(".cite-text").forEach((citation) => {
+        citation.style.height = `${citation.scrollHeight}px`;
+      });
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector(".header-links");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navigation.classList.toggle("is-open");
+        menuToggle.classList.toggle("is-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      });
     </script>
   </body>
 </html>

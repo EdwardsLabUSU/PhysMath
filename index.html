@@ -1,104 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhysMath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <a href="#" class="logo-link">
+          <div class="header-title">
+            <div class="header-text">
+              <div class="header-text-title">
+                <h1 class="phys-text">Phys</h1>
+                <h1 class="math-text">Math</h1>
+              </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="PhysMath offers interactive physics simulations for students and educators. It helps them visualize and understand physical phenomena through letting them manipulate variables and governing equations and observe outcomes in real-time.">
-    <meta name="keywords"
-        content="physics simulations, interactive, education, PhysMath, equations, Mathematic, Utah State University">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>PhysMath: Interactive Physics Simulations</title>
-</head>
-
-<body>
-    <header class="title-box">
-        <h1 class="physMath-text">
-            <span class="lab-title">Phys</span>
-            <span class="lab-color">Math</span>
-        </h1>
-        <p class="physics-details">INTERACTIVE PHYSICS SIMULATIONS</p>
+              <h2 class="header-text-subtitle">
+                Interactive Physics Simulations
+              </h2>
+            </div>
+          </div>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <div class="header-links" id="primary-navigation">
+          <a class="header-link" href="#simulations">Simulations</a>
+          <a class="header-link" href="./about/about.html">About</a>
+          <a class="header-link" href="mailto:john.edwards@usu.edu">Contact</a>
+          <a class="header-link" href="./cite/cite.html">Cite</a>
+        </div>
+      </div>
     </header>
-    <main >
-        <div class="cardsHolderContainer">
-            <div class="physicsContainer">
-                <h2 class="sim-rep">Physics simulations:</h2>
-            </div>
-            <div class="sim-cards-container">
-                <!-- <a class="cardsContainer" href="./bead_on_hoop/bead-on-hoop_en_adapted-from-phet.html"> -->
-                <a class="cardsContainer" href="./bead_on_hoop/index4.html">
-                    <div class="imageContainer">
-                        <img src="thumbnails/beadOnHooop.png" class="image" alt="Bead On Hoop" />
-                    </div>
-                    <p class="bead-on-hoop-text">Bead on Hoop</p>
-                    <!-- <a href="./bead_on_hoop/bead-on-hoop_en_adapted-from-phet.html">Bead on Hoop</a> -->
-                </a>
-                <!-- href="./projectile_motion_drag/projectile-motion-drag_en_adapted-from-phet.html"> -->
-                <a class="cardsContainer"
-                    href="./projectile_motion_drag/index4.html">
-                    <div class="imageContainer">
-                        <img src="thumbnails/projectile.png" class="image" alt="Projectile Motion with Drag" />
-                    </div>
-                    <p>Projectile Motion with Drag</p>
-                    <!-- <a href="./bead_on_hoop/bead-on-hoop_en_adapted-from-phet.html">Bead on Hoop</a> -->
-                </a>
-                <!--             <a class="cardsContainer" href="./coriolis-force/coriolis-force_all_adapted-from-phet2.html"> -->
-                <a class="cardsContainer" href="./coriolis-force/index2.html">
-                    <div class="imageContainer">
-                        <img src="thumbnails/coriolis.png" class="image" alt="Coriolis Force" />
-                    </div>
-                    <p>Coriolis Force</p>
-                </a>
-                <a class="cardsContainer" href="./spring1/index8.html">
-                    <div class="imageContainer">
-                        <img src="thumbnails/springs.png" class="image" alt="Spring" />
-                    </div>
-                    <p>Spring</p>
-                </a>
-                <a class="cardsContainer" href="./spring2/index.html">
-                    <div class="imageContainer">
-                        <img src="thumbnails/springs.png" class="image" alt="Spring2" />
-                    </div>
-                    <p>Spring</p>
-                </a>
-                <a class="cardsContainer" href="./charge_in_uniform/dist/index.html">
-                    <div class="imageContainer">
-                        <img src="thumbnails/chargeInField.png" class="image" alt="Charge in Uniform Field" />
-                    </div>
-                    <p>Charge in Uniform Electric and Magnetic Fields</p>
-                </a>
-            </div>
 
+    <div class="introduction">
+      <div class="introduction-text">
+        <h3>Explore physics by editing governing equations</h3>
+
+        <p>
+          Interactive physics simulations that connect mathematics to physical
+          behavior.
+        </p>
+      </div>
+
+      <div class="introduction-image">
+        <img class="thumbnail" src="coriolis.png" alt="Coriolis Effect" />
+      </div>
+    </div>
+
+    <div class="simulations" id="simulations">
+      <h3>Simulations</h3>
+      <div class="simulation-list">
+        <div class="simulation-card">
+          <div class="simulation-card-image">
+            <img src="coriolis.png" alt="Coriolis Effect" />
+          </div>
+          <div class="line"></div>
+          <div class="simulation-card-text">
+            <h4>Coriolis Effect</h4>
+            <p>Explore mass-spring systems and oscillatory motion.</p>
+            <a href="coriolis/index2.html">
+              <div class="simulation-card-link">
+                <h4>Open</h4>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <div class="infoContainer">
-            <div class="linksContainer">
-                <a href="./about/about.html">About PhysMath</a>
-                <a href="./sims/sims.html">List of existing physics simulations</a>
-                <a href="./cite/cite.html">How to cite PhysMath</a>
-                <a href="https://usu.co1.qualtrics.com/jfe/form/SV_8GoIz84QcQtngTY">Survey on future simulation development</a>
-            </div>
-            <div class="linksContainer">
-                <a href="https://www.usu.edu/accessibility/concern" target="_blank">File an accessibility concern</a>
-            </div>
-            <div class="contactContainer">
-                <p class="contactText">Contact Us</p>
-                <div>
-                    <p><a href="mailto:john.edwards@usu.edu" class="email">john.edwards@usu.edu</a></p>
-                    <p>Utah State University</p>
-                    <p>Logan, UT, USA</p>
-                </div>
-            </div>
+        <div class="simulation-card">
+          <div class="simulation-card-image">
+            <img src="beadOnHooop.png" alt="Bead on Hoop" />
+          </div>
+          <div class="line"></div>
+          <div class="simulation-card-text">
+            <h4>Bead on Hoop</h4>
+            <p>Explore the motion of a bead on a rotating hoop.</p>
+            <a href="./beadOnhoop/index4.html">
+              <div class="simulation-card-link">
+                <h4>Open</h4>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </div>
+            </a>
+          </div>
         </div>
-    </main>
 
-    <footer>
-        <p>2025 PhysMath, Utah State University</p>
+        <div class="simulation-card">
+          <div class="simulation-card-image">
+            <img
+              src="chargeInField.png"
+              alt="Charge in Electric & Magnetic Field"
+            />
+          </div>
+          <div class="line"></div>
+          <div class="simulation-card-text">
+            <h4>Charge in Electric & Magnetic Field</h4>
+            <p>
+              Explore the motion of a charge in electric and magnetic fields.
+            </p>
+            <a href="./chargeInUniformFields/dist/index.html">
+              <div class="simulation-card-link">
+                <h4>Open</h4>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="simulation-card">
+          <div class="simulation-card-image">
+            <img src="projectile.png" alt="Projectile Motion" />
+          </div>
+          <div class="line"></div>
+          <div class="simulation-card-text">
+            <h4>Projectile Motion</h4>
+            <p>Explore the motion of a projectile in a gravitational field.</p>
+            <a href="./projectileMotionWithDrag/index4.html">
+              <div class="simulation-card-link">
+                <h4>Open</h4>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="simulation-card">
+          <div class="simulation-card-image">
+            <img src="springIntro.png" alt="Springs" />
+          </div>
+          <div class="line"></div>
+          <div class="simulation-card-text">
+            <h4>Spring - Introductory</h4>
+            <p>Explore the motion of a mass attached to a spring.</p>
+            <a href="./springIntroductory/index.html">
+              <div class="simulation-card-link">
+                <h4>Open</h4>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="simulation-card">
+          <div class="simulation-card-image">
+            <img src="springInter.png" alt="Springs" />
+          </div>
+          <div class="line"></div>
+          <div class="simulation-card-text">
+            <h4>Spring - Intermediate</h4>
+            <p>Explore the motion of a mass attached to a spring.</p>
+            <a href="./springIntermediate/index8.html">
+              <div class="simulation-card-link">
+                <h4>Open</h4>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-about">
+          <a class="footer-logo" href="#" aria-label="PhysMath home">
+            <span class="footer-logo-phys">Phys</span
+            ><span class="footer-logo-math">Math</span>
+          </a>
+          <p>
+            Interactive physics simulations that connect mathematical equations
+            to physical behavior.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <a href="#simulations">Simulations</a>
+            <a href="./cite/cite.html">How to cite</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>Project</h3>
+            <a href="./about/about.html">About PhysMath</a>
+            <a href="mailto:john.edwards@usu.edu">Contact us</a>
+            <a href="https://www.usu.edu/accessibility/concern"
+              >Accessibility</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PhysMath, Utah State University</p>
+        <p>Logan, Utah, USA</p>
+      </div>
     </footer>
-</body>
-
-
+  </body>
 </html>
